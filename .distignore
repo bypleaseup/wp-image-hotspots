@@ -1,0 +1,45 @@
+# Files and directories excluded from the WordPress.org plugin distribution zip.
+# Used by 10up/action-wordpress-plugin-deploy and equivalent build scripts.
+
+# VCS
+.git
+.gitignore
+.gitattributes
+.github
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+.editorconfig
+
+# Sources (only the built /assets/dist/ ships)
+assets/src
+
+# Dev dependencies
+node_modules
+vendor
+package.json
+package-lock.json
+composer.json
+composer.lock
+
+# Build / quality config
+phpcs.xml.dist
+phpstan.neon.dist
+phpunit.xml.dist
+.phpunit.result.cache
+coverage
+
+# Tests
+tests
+tests-js
+
+# Distribution
+.distignore
+bin
+
+# Docs (lo Spec Kit AIDHA non va distribuito su WP.org)
+aidha
+readme.md

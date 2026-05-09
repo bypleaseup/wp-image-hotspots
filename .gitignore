@@ -1,0 +1,14 @@
+.DS_Store
+.vscode/
+.idea/
+node_modules/
+vendor/
+build/
+*.log
+.env
+.env.local
+coverage/
+.phpunit.result.cache
+dist/
+!assets/dist/
+!assets/dist/**
