@@ -1,7 +1,7 @@
-/* ═══════════════════════════════════════════════════════════
-   WP Image Hotspots — Admin CSS v2.5.80
+/* ══════════════════════════════════════════════════════════
+   Image Hotspots Tool — Admin CSS v2.5.80
    Design system: Plus Jakarta Sans · #0b1220 dark · #3fe0a0 green
-   ═══════════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════════════════════ */
 
 /* ── Base ── */
 #wphs-wrap *{box-sizing:border-box}
@@ -236,4 +236,3 @@ to{transform:translateX(-50%) translateY(0);opacity:1}}
 #wphs-wrap .wphs-hotspot, #wphs-wrap .wphs-dot{z-index:5 !important}
 #wphs-wrap .wphs-tooltip, #wphs-wrap .wphs-admin-tooltip{z-index:200 !important;overflow:visible;max-width:calc(100% - 20px)}
 #wphs-wrap .wphs-muted{color:#667085;font-size:13px}
-
