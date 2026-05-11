@@ -54,8 +54,8 @@ final class Admin {
 	 */
 	public function register_menu() : void {
 		add_menu_page(
-			__( 'WP Hotspots', 'wp-image-hotspots' ),
-			__( 'WP Hotspots', 'wp-image-hotspots' ),
+			__( 'WP Hotspots', 'image-hotspots-tool' ),
+			__( 'WP Hotspots', 'image-hotspots-tool' ),
 			'manage_options',
 			'wphs-editor',
 			array( $this->editor_page, 'render' ),
@@ -65,8 +65,8 @@ final class Admin {
 
 		add_submenu_page(
 			'wphs-editor',
-			__( 'Editor Hotspots', 'wp-image-hotspots' ),
-			__( 'Editor', 'wp-image-hotspots' ),
+			__( 'Editor Hotspots', 'image-hotspots-tool' ),
+			__( 'Editor', 'image-hotspots-tool' ),
 			'manage_options',
 			'wphs-editor',
 			array( $this->editor_page, 'render' )
@@ -74,8 +74,8 @@ final class Admin {
 
 		add_submenu_page(
 			'wphs-editor',
-			__( 'Galleries', 'wp-image-hotspots' ),
-			__( 'Galleries', 'wp-image-hotspots' ),
+			__( 'Galleries', 'image-hotspots-tool' ),
+			__( 'Galleries', 'image-hotspots-tool' ),
 			'manage_options',
 			'wphs-galleries',
 			array( $this->galleries_page, 'render' )
@@ -91,7 +91,7 @@ final class Admin {
 	public function plugin_action_links( array $links ) : array {
 		$editor = admin_url( 'admin.php?page=wphs-editor' );
 		$custom = array(
-			'<a href="' . esc_url( $editor ) . '">' . esc_html__( 'Editor', 'wp-image-hotspots' ) . '</a>',
+			'<a href="' . esc_url( $editor ) . '">' . esc_html__( 'Editor', 'image-hotspots-tool' ) . '</a>',
 		);
 		return array_merge( $custom, $links );
 	}

@@ -39,8 +39,8 @@ final class PostTypes {
 			self::GALLERY,
 			array(
 				'labels'              => array(
-					'name'          => __( 'Hotspot Galleries', 'wp-image-hotspots' ),
-					'singular_name' => __( 'Hotspot Gallery', 'wp-image-hotspots' ),
+					'name'          => __( 'Hotspot Galleries', 'image-hotspots-tool' ),
+					'singular_name' => __( 'Hotspot Gallery', 'image-hotspots-tool' ),
 				),
 				'public'              => false,
 				'show_ui'             => false,
@@ -62,8 +62,8 @@ final class PostTypes {
 			self::TOOLTIP,
 			array(
 				'labels'              => array(
-					'name'          => __( 'Hotspot Tooltips', 'wp-image-hotspots' ),
-					'singular_name' => __( 'Hotspot Tooltip', 'wp-image-hotspots' ),
+					'name'          => __( 'Hotspot Tooltips', 'image-hotspots-tool' ),
+					'singular_name' => __( 'Hotspot Tooltip', 'image-hotspots-tool' ),
 				),
 				'public'              => false,
 				'show_ui'             => false,

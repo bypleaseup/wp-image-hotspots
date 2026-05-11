@@ -44,7 +44,7 @@ abstract class AjaxBase {
 			: '';
 		if ( ! wp_verify_nonce( $nonce, self::NONCE_ACTION ) ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Bad nonce', 'wp-image-hotspots' ) ),
+				array( 'message' => __( 'Bad nonce', 'image-hotspots-tool' ) ),
 				403
 			);
 		}
@@ -61,7 +61,7 @@ abstract class AjaxBase {
 			return;
 		}
 		wp_send_json_error(
-			array( 'message' => '' === $message ? __( 'Forbidden', 'wp-image-hotspots' ) : $message ),
+			array( 'message' => '' === $message ? __( 'Forbidden', 'image-hotspots-tool' ) : $message ),
 			403
 		);
 	}
