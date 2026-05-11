@@ -69,14 +69,14 @@ final class AjaxGallery extends AjaxBase {
 
 		$saved_id = $this->galleries->save( $gallery_id, $input );
 		if ( 0 === $saved_id ) {
-			wp_send_json_error( array( 'message' => __( 'Could not save gallery', 'wp-image-hotspots' ) ), 500 );
+			wp_send_json_error( array( 'message' => __( 'Could not save gallery', 'image-hotspots-tool' ) ), 500 );
 		}
 
 		wp_send_json_success(
 			array(
 				'gallery_id' => $saved_id,
 				'shortcode'  => sprintf( '[wphs_gallery id="%d"]', $saved_id ),
-				'message'    => __( 'Gallery saved', 'wp-image-hotspots' ),
+				'message'    => __( 'Gallery saved', 'image-hotspots-tool' ),
 			)
 		);
 	}
@@ -90,14 +90,14 @@ final class AjaxGallery extends AjaxBase {
 
 		$gallery_id = $this->post_int( 'gallery_id' );
 		if ( $gallery_id <= 0 ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid gallery ID', 'wp-image-hotspots' ) ), 400 );
+			wp_send_json_error( array( 'message' => __( 'Invalid gallery ID', 'image-hotspots-tool' ) ), 400 );
 		}
 
 		if ( ! $this->galleries->delete( $gallery_id ) ) {
-			wp_send_json_error( array( 'message' => __( 'Gallery not found', 'wp-image-hotspots' ) ), 404 );
+			wp_send_json_error( array( 'message' => __( 'Gallery not found', 'image-hotspots-tool' ) ), 404 );
 		}
 
-		wp_send_json_success( array( 'message' => __( 'Deleted', 'wp-image-hotspots' ) ) );
+		wp_send_json_success( array( 'message' => __( 'Deleted', 'image-hotspots-tool' ) ) );
 	}
 
 	/**

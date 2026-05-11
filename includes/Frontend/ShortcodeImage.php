@@ -158,7 +158,7 @@ final class ShortcodeImage {
 				$layer_dom_id = 'wphs-layer-' . $attachment_id . '-' . $id;
 				$default_label = sprintf(
 					/* translators: %d: hotspot index, starting from 1 */
-					__( 'Hotspot %d', 'wp-image-hotspots' ),
+					__( 'Hotspot %d', 'image-hotspots-tool' ),
 					$hotspot_index
 				);
 				/**
@@ -205,7 +205,7 @@ final class ShortcodeImage {
 				$layer_dom_id = 'wphs-layer-' . $attachment_id . '-' . $id;
 				$layer_label  = sprintf(
 					/* translators: %d: hotspot index, starting from 1 */
-					__( 'Hotspot %d details', 'wp-image-hotspots' ),
+					__( 'Hotspot %d details', 'image-hotspots-tool' ),
 					$layer_index
 				);
 			?>
