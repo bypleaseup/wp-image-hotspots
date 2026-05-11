@@ -28,7 +28,7 @@ final class I18n {
 	 */
 	public function load_textdomain() : void {
 		load_plugin_textdomain(
-			'wp-image-hotspots',
+			'image-hotspots-tool',
 			false,
 			dirname( plugin_basename( WPHS_PLUGIN_FILE ) ) . '/languages'
 		);

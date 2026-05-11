@@ -3,13 +3,13 @@
 # Build a WordPress.org-ready distribution zip.
 #
 # Reads .distignore for exclusions and produces:
-#   build/wp-image-hotspots-<VERSION>.zip
+#   build/image-hotspots-tool-<VERSION>.zip
 #
 # Requires: rsync, zip.
 
 set -euo pipefail
 
-PLUGIN_SLUG="wp-image-hotspots"
+PLUGIN_SLUG="image-hotspots-tool"
 PLUGIN_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BUILD_DIR="${PLUGIN_ROOT}/build"
 STAGING="${BUILD_DIR}/${PLUGIN_SLUG}"
