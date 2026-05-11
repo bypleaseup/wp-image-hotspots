@@ -3,8 +3,8 @@
  * Base class for AJAX modules.
  *
  * Centralizes the nonce verification policy so every endpoint uses the
- * same nonce name (`wphs_nonce_v1`), closing the dual-nonce inconsistency
- * documented in aidha/05-quality-gates.md C.4 ("doppio nonce-set").
+ * same nonce name (`wphs_nonce_v1`), closing a long-standing dual-nonce
+ * inconsistency in the legacy code.
  *
  * @package Pleaseup\WPImageHotspots\Ajax
  */

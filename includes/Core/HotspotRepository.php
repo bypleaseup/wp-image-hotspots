@@ -2,10 +2,9 @@
 /**
  * CRUD for hotspot data stored as post_meta on attachments.
  *
- * Persists the array described in aidha/03-data-model.md section B.1.
  * Auto-migrates legacy entries with inline `html` to the CPT-backed
- * `tooltip_id` form on first write (regression-critical: see
- * aidha/04-constraints.md section H point 2).
+ * `tooltip_id` form on first write (regression-critical: silent upgrade
+ * path from pre-3.0 installs).
  *
  * @package Pleaseup\WPImageHotspots\Core
  */

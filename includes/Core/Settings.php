@@ -2,8 +2,8 @@
 /**
  * Settings repository — global plugin options + per-attachment override.
  *
- * Data shape, defaults, validation rules and override merge semantics
- * follow aidha/03-data-model.md sections A.1 and B.3 verbatim.
+ * Defines the data shape, defaults, validation rules and override merge
+ * semantics for plugin settings.
  *
  * @package Pleaseup\WPImageHotspots\Core
  */

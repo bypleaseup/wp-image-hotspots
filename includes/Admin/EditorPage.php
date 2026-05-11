@@ -19,11 +19,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Prepares the data for the editor template and includes the partial.
  *
- * Note: aidha/01-architecture.md regola 6 forbids DB calls inside
- * partials. The legacy editor template still contains a couple of
- * `get_post_meta()` calls (one per recent-image thumbnail) that survived
- * the verbatim extraction; they are tracked as Phase-5 follow-up debt
- * and will be moved here in a later cleanup PR.
+ * Note: by convention, partials do not perform DB queries. The legacy
+ * editor template still contains a couple of `get_post_meta()` calls
+ * (one per recent-image thumbnail) that survived the verbatim extraction;
+ * they are tracked for a future cleanup PR.
  */
 final class EditorPage {
 

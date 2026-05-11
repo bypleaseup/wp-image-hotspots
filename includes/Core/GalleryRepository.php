@@ -2,8 +2,6 @@
 /**
  * CRUD for the wphs_gallery custom post type.
  *
- * Schema follows aidha/03-data-model.md section C.1.
- *
  * @package Pleaseup\WPImageHotspots\Core
  */
 

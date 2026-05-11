@@ -3,8 +3,7 @@
  * Admin bootstrap.
  *
  * Wires the admin menu, the asset enqueue layer and the page renderers.
- * Admin classes never touch frontend code (separation of concerns
- * mandated by aidha/01-architecture.md regola 5).
+ * Admin classes never touch frontend code.
  *
  * @package Pleaseup\WPImageHotspots\Admin
  */

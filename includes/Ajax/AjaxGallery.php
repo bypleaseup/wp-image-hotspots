@@ -2,7 +2,7 @@
 /**
  * AJAX endpoints for hotspot galleries.
  *
- * Closes baseline gaps documented in aidha/05-quality-gates.md C.4:
+ * Closes baseline capability gaps in the legacy AJAX surface:
  *   #3 ajax_gallery_thumb_url   → upload_files capability
  *   #4 ajax_gallery_preview     → manage_options capability
  *
