@@ -37,7 +37,7 @@ for the full documentation, FAQ, screenshots, and changelog.
 
 ## Compatibility
 
-- WordPress: ≥ 6.0 (tested up to 6.8)
+- WordPress: ≥ 6.0 (tested up to 6.9)
 - PHP: ≥ 7.4
 - jQuery (bundled with WordPress)
 

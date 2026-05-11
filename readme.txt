@@ -2,7 +2,7 @@
 Contributors:      bypleaseup
 Tags:              hotspot, image map, image overlay, tooltip, media library
 Requires at least: 6.0
-Tested up to:      6.8
+Tested up to:      6.9
 Requires PHP:      7.4
 Stable tag:        3.0.0
 License:           GPL-2.0-or-later
