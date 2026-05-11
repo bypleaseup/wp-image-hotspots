@@ -72,7 +72,7 @@ final class AjaxHotspots extends AjaxBase {
 		$raw     = isset( $_POST['hotspots_json'] ) ? wp_unslash( (string) $_POST['hotspots_json'] ) : '[]';
 		$decoded = json_decode( $raw, true );
 		if ( ! is_array( $decoded ) ) {
-			wp_send_json_error( array( 'message' => __( 'Invalid JSON', 'wp-image-hotspots' ) ), 400 );
+			wp_send_json_error( array( 'message' => __( 'Invalid JSON', 'image-hotspots-tool' ) ), 400 );
 		}
 
 		$result = $this->hotspots->save( $attachment_id, $decoded );
@@ -113,18 +113,18 @@ final class AjaxHotspots extends AjaxBase {
 	 */
 	public function save_hotspots_post() : void {
 		if ( ! is_admin() ) {
-			wp_die( esc_html__( 'Forbidden', 'wp-image-hotspots' ) );
+			wp_die( esc_html__( 'Forbidden', 'image-hotspots-tool' ) );
 		}
 
 		$attachment_id = isset( $_POST['attachment_id'] ) ? absint( $_POST['attachment_id'] ) : 0;
 		if ( $attachment_id <= 0 ) {
-			wp_die( esc_html__( 'Missing attachment_id', 'wp-image-hotspots' ) );
+			wp_die( esc_html__( 'Missing attachment_id', 'image-hotspots-tool' ) );
 		}
 
 		check_admin_referer( 'wphs_save_hotspots_post_' . $attachment_id );
 
 		if ( ! Capabilities::can_edit_attachment( $attachment_id ) ) {
-			wp_die( esc_html__( 'Unauthorized', 'wp-image-hotspots' ) );
+			wp_die( esc_html__( 'Unauthorized', 'image-hotspots-tool' ) );
 		}
 
 		$raw     = isset( $_POST['hotspots_json'] ) ? wp_unslash( (string) $_POST['hotspots_json'] ) : '[]';
