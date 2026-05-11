@@ -1,5 +1,5 @@
 {
-    "name": "wp-image-hotspots",
+    "name": "image-hotspots-tool",
     "version": "3.0.0-alpha.1",
     "description": "Add drag & drop hotspots to images from the Media Library, Gutenberg galleries, and ACF fields.",
     "private": true,
