@@ -9,16 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
-          tools: composer:v2
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: composer install --no-dev --prefer-dist --no-interaction --no-progress
-      - run: npm install --no-audit --no-fund
-      - run: npm run build
       - name: Verify version coherence
         run: |
           set -e
