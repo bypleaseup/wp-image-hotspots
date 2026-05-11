@@ -2,10 +2,10 @@
 /**
  * AJAX endpoint that resolves oEmbed URLs in tooltip HTML.
  *
- * Closes baseline gap aidha/05-quality-gates.md C.4 #2: gates the
- * endpoint behind `edit_posts` so subscribers cannot trigger
- * server-side oEmbed lookups (mitigates SSRF surface even though the
- * underlying wp_oembed_get() already enforces a provider whitelist).
+ * Closes a legacy capability gap by gating the endpoint behind
+ * `edit_posts` so subscribers cannot trigger server-side oEmbed lookups
+ * (mitigates SSRF surface even though the underlying wp_oembed_get()
+ * already enforces a provider whitelist).
  *
  * @package Pleaseup\WPImageHotspots\Ajax
  */

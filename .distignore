@@ -40,6 +40,5 @@ tests-js
 .distignore
 bin
 
-# Docs (lo Spec Kit AIDHA non va distribuito su WP.org)
-aidha
+# Internal docs
 readme.md

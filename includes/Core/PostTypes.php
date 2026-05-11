@@ -2,8 +2,7 @@
 /**
  * Custom post type registration.
  *
- * Closes baseline issue note #1 (aidha/07-evolution-log.md, 2026-05-04):
- * the legacy `wphs_tooltip` CPT was used via wp_insert_post() without
+ * The legacy `wphs_tooltip` CPT was used via wp_insert_post() without
  * being registered. The rewrite registers both `wphs_gallery` and
  * `wphs_tooltip` explicitly on the `init` hook with `public => false`
  * so they are predictable to operators inspecting the database.

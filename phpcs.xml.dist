@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="WP Image Hotspots">
-    <description>WordPress coding standards for the wp-image-hotspots plugin (AIDHA rewrite).</description>
+    <description>WordPress coding standards for the wp-image-hotspots plugin.</description>
 
     <file>.</file>
 

@@ -24,6 +24,5 @@ composer.lock   export-ignore
 tests/          export-ignore
 tests-js/       export-ignore
 assets/src/     export-ignore
-aidha/          export-ignore
 readme.md       export-ignore
 bin/            export-ignore
