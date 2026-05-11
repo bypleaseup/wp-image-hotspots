@@ -1,4 +1,4 @@
-=== WP Image Hotspots ===
+=== Image Hotspots Tool ===
 Contributors:      bypleaseup
 Tags:              hotspot, image map, image overlay, tooltip, media library
 Requires at least: 6.0
@@ -12,7 +12,7 @@ Add interactive drag & drop hotspots to any image in your Media Library, Gutenbe
 
 == Description ==
 
-**WP Image Hotspots** lets you place interactive hotspots directly onto images stored in your Media Library. Each hotspot can display a rich HTML layer (tooltip) when clicked or hovered, making it perfect for product highlights, interactive infographics, wayfinding maps, and more.
+**Image Hotspots Tool** lets you place interactive hotspots directly onto images stored in your Media Library. Each hotspot can display a rich HTML layer (tooltip) when clicked or hovered, making it perfect for product highlights, interactive infographics, wayfinding maps, and more.
 
 = Key Features =
 
@@ -62,7 +62,7 @@ Themes and plugins can integrate via the following filters and actions:
 
 == Installation ==
 
-1. Upload the `wp-image-hotspots` folder to the `/wp-content/plugins/` directory, or install the plugin directly from the WordPress plugin repository.
+1. Upload the `image-hotspots-tool` folder to the `/wp-content/plugins/` directory, or install the plugin directly from the WordPress plugin repository.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Navigate to **WP Hotspots → Editor** in the admin sidebar.
 4. Select an image from the Media Library and start adding hotspots.

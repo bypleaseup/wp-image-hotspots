@@ -126,7 +126,7 @@ final class Assets {
 				'hotspotStyle'    => $opts['hotspot_style'],
 				'hotspotIcon'     => $icon_url ? $icon_url : '',
 				'hotspotIconSize' => absint( $opts['hotspot_icon_size'] ),
-				'defaultHtml'     => '<strong>' . esc_html__( 'Title', 'wp-image-hotspots' ) . '</strong><br>' . esc_html__( 'Description', 'wp-image-hotspots' ),
+				'defaultHtml'     => '<strong>' . esc_html__( 'Title', 'image-hotspots-tool' ) . '</strong><br>' . esc_html__( 'Description', 'image-hotspots-tool' ),
 				'imgSettings'     => array_merge( $img_settings, array( '_use_default_flag' => false ) ),
 				'imgIconUrl'      => $img_settings['hotspot_image_id']
 					? wp_get_attachment_image_url( (int) $img_settings['hotspot_image_id'], 'thumbnail' )
@@ -148,20 +148,20 @@ final class Assets {
 	 */
 	private function js_strings() : array {
 		return array(
-			'saved'              => __( 'Saved', 'wp-image-hotspots' ),
-			'saveFailed'         => __( 'Save failed', 'wp-image-hotspots' ),
-			'saving'             => __( 'Saving…', 'wp-image-hotspots' ),
-			'styleSaved'         => __( 'Hotspot style saved', 'wp-image-hotspots' ),
-			'resetToDefault'     => __( 'Reset to default', 'wp-image-hotspots' ),
-			'resetFailed'        => __( 'Reset failed', 'wp-image-hotspots' ),
-			'chooseNormalFirst'  => __( 'Choose a Normal icon first.', 'wp-image-hotspots' ),
-			'previewNormal'      => __( 'Preview: normal', 'wp-image-hotspots' ),
-			'previewSelected'    => __( 'Preview: selected', 'wp-image-hotspots' ),
-			'confirmDeleteAll'   => __( 'Remove all hotspots from this image?', 'wp-image-hotspots' ),
-			'confirmDeleteOne'   => __( 'Delete this hotspot?', 'wp-image-hotspots' ),
-			'confirmDeleteImg'   => __( 'Remove all hotspots and per-image settings? This cannot be undone.', 'wp-image-hotspots' ),
-			'confirmDeleteGall'  => __( 'Delete this gallery? Images and hotspots are kept.', 'wp-image-hotspots' ),
-			'never'              => __( 'never', 'wp-image-hotspots' ),
+			'saved'              => __( 'Saved', 'image-hotspots-tool' ),
+			'saveFailed'         => __( 'Save failed', 'image-hotspots-tool' ),
+			'saving'             => __( 'Saving…', 'image-hotspots-tool' ),
+			'styleSaved'         => __( 'Hotspot style saved', 'image-hotspots-tool' ),
+			'resetToDefault'     => __( 'Reset to default', 'image-hotspots-tool' ),
+			'resetFailed'        => __( 'Reset failed', 'image-hotspots-tool' ),
+			'chooseNormalFirst'  => __( 'Choose a Normal icon first.', 'image-hotspots-tool' ),
+			'previewNormal'      => __( 'Preview: normal', 'image-hotspots-tool' ),
+			'previewSelected'    => __( 'Preview: selected', 'image-hotspots-tool' ),
+			'confirmDeleteAll'   => __( 'Remove all hotspots from this image?', 'image-hotspots-tool' ),
+			'confirmDeleteOne'   => __( 'Delete this hotspot?', 'image-hotspots-tool' ),
+			'confirmDeleteImg'   => __( 'Remove all hotspots and per-image settings? This cannot be undone.', 'image-hotspots-tool' ),
+			'confirmDeleteGall'  => __( 'Delete this gallery? Images and hotspots are kept.', 'image-hotspots-tool' ),
+			'never'              => __( 'never', 'image-hotspots-tool' ),
 		);
 	}
 

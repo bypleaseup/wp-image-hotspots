@@ -83,7 +83,7 @@ final class GalleryRepository {
 	public function save( int $gallery_id, array $input ) : int {
 		$title = isset( $input['title'] )
 			? sanitize_text_field( (string) $input['title'] )
-			: __( 'Untitled gallery', 'wp-image-hotspots' );
+			: __( 'Untitled gallery', 'image-hotspots-tool' );
 
 		$post_data = array(
 			'post_type'   => PostTypes::GALLERY,
