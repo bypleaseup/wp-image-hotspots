@@ -4,7 +4,7 @@ Tags:              hotspot, image map, image overlay, tooltip, media library
 Requires at least: 6.0
 Tested up to:      6.8
 Requires PHP:      7.4
-Stable tag:        3.0.1
+Stable tag:        3.0.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,14 +64,14 @@ Themes and plugins can integrate via the following filters and actions:
 
 1. Upload the `pleaseup-hotspots` folder to the `/wp-content/plugins/` directory, or install the plugin directly from the WordPress plugin repository.
 2. Activate the plugin through the **Plugins** menu in WordPress.
-3. Navigate to **WP Hotspots → Editor** in the admin sidebar.
+3. Navigate to **Pleaseup Hotspots → Editor** in the admin sidebar.
 4. Select an image from the Media Library and start adding hotspots.
 
 == Frequently Asked Questions ==
 
 = How do I add a hotspot to an image? =
 
-Go to **WP Hotspots → Editor**, select an image from the Media Library, then click anywhere on the image preview to create a hotspot. Drag it to reposition it, then click the hotspot to edit the HTML content of the popup layer.
+Go to **Pleaseup Hotspots → Editor**, select an image from the Media Library, then click anywhere on the image preview to create a hotspot. Drag it to reposition it, then click the hotspot to edit the HTML content of the popup layer.
 
 = How do I display the image with hotspots on the front end? =
 
@@ -129,6 +129,11 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 
 == Changelog ==
 
+= 3.0.2 =
+* Admin: renamed the admin sidebar menu label and the in-page hero `<h1>` from "WP Hotspots" / "WP Image HotSpots" to "Pleaseup Hotspots" to match the plugin name.
+* readme.txt: updated installation and FAQ instructions to refer to the new menu label.
+* Translations: POT regenerated for the renamed strings.
+
 = 3.0.1 =
 * Renamed plugin to "Pleaseup Hotspots" (slug `pleaseup-hotspots`) for the WordPress.org Plugin Directory.
 * Frontend: extracted the gallery carousel JavaScript and dynamic CSS to enqueued assets (no more inline `<script>` or `<style>` blocks in the rendered shortcode HTML). The dynamic per-instance values are now passed as CSS custom properties on the wrapper.
@@ -138,6 +143,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 Initial release.
 
 == Upgrade Notice ==
+
+= 3.0.2 =
+Admin UI strings catch-up rename ("WP Hotspots" → "Pleaseup Hotspots"). No data migration required.
 
 = 3.0.1 =
 Rename + asset cleanup for WordPress.org Plugin Directory submission. No data migration required.
