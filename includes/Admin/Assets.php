@@ -110,6 +110,21 @@ final class Assets {
 					'galleries' => $this->galleries_for_js(),
 				)
 			);
+
+			// Preview reuses the frontend gallery CSS + carousel JS so
+			// the admin preview matches what visitors see. The frontend
+			// Assets module skips registration in admin context, so we
+			// enqueue them directly here for this one screen.
+			$front_css_path = WPHS_PLUGIN_DIR . 'assets/dist/css/frontend.css';
+			$front_js_path  = WPHS_PLUGIN_DIR . 'assets/dist/js/frontend-gallery.js';
+			$front_css_url  = WPHS_PLUGIN_URL . 'assets/dist/css/frontend.css';
+			$front_js_url   = WPHS_PLUGIN_URL . 'assets/dist/js/frontend-gallery.js';
+			$front_css_ver  = file_exists( $front_css_path ) ? (string) filemtime( $front_css_path ) : WPHS_VERSION;
+			$front_js_ver   = file_exists( $front_js_path ) ? (string) filemtime( $front_js_path ) : WPHS_VERSION;
+
+			wp_enqueue_style( 'wphs-frontend', $front_css_url, array(), $front_css_ver );
+			wp_enqueue_script( 'wphs-frontend-gallery', $front_js_url, array(), $front_js_ver, true );
+
 			return;
 		}
 
@@ -126,7 +141,7 @@ final class Assets {
 				'hotspotStyle'    => $opts['hotspot_style'],
 				'hotspotIcon'     => $icon_url ? $icon_url : '',
 				'hotspotIconSize' => absint( $opts['hotspot_icon_size'] ),
-				'defaultHtml'     => '<strong>' . esc_html__( 'Title', 'image-hotspots-tool' ) . '</strong><br>' . esc_html__( 'Description', 'image-hotspots-tool' ),
+				'defaultHtml'     => '<strong>' . esc_html__( 'Title', 'pleaseup-hotspots' ) . '</strong><br>' . esc_html__( 'Description', 'pleaseup-hotspots' ),
 				'imgSettings'     => array_merge( $img_settings, array( '_use_default_flag' => false ) ),
 				'imgIconUrl'      => $img_settings['hotspot_image_id']
 					? wp_get_attachment_image_url( (int) $img_settings['hotspot_image_id'], 'thumbnail' )
@@ -148,20 +163,20 @@ final class Assets {
 	 */
 	private function js_strings() : array {
 		return array(
-			'saved'              => __( 'Saved', 'image-hotspots-tool' ),
-			'saveFailed'         => __( 'Save failed', 'image-hotspots-tool' ),
-			'saving'             => __( 'Saving…', 'image-hotspots-tool' ),
-			'styleSaved'         => __( 'Hotspot style saved', 'image-hotspots-tool' ),
-			'resetToDefault'     => __( 'Reset to default', 'image-hotspots-tool' ),
-			'resetFailed'        => __( 'Reset failed', 'image-hotspots-tool' ),
-			'chooseNormalFirst'  => __( 'Choose a Normal icon first.', 'image-hotspots-tool' ),
-			'previewNormal'      => __( 'Preview: normal', 'image-hotspots-tool' ),
-			'previewSelected'    => __( 'Preview: selected', 'image-hotspots-tool' ),
-			'confirmDeleteAll'   => __( 'Remove all hotspots from this image?', 'image-hotspots-tool' ),
-			'confirmDeleteOne'   => __( 'Delete this hotspot?', 'image-hotspots-tool' ),
-			'confirmDeleteImg'   => __( 'Remove all hotspots and per-image settings? This cannot be undone.', 'image-hotspots-tool' ),
-			'confirmDeleteGall'  => __( 'Delete this gallery? Images and hotspots are kept.', 'image-hotspots-tool' ),
-			'never'              => __( 'never', 'image-hotspots-tool' ),
+			'saved'              => __( 'Saved', 'pleaseup-hotspots' ),
+			'saveFailed'         => __( 'Save failed', 'pleaseup-hotspots' ),
+			'saving'             => __( 'Saving…', 'pleaseup-hotspots' ),
+			'styleSaved'         => __( 'Hotspot style saved', 'pleaseup-hotspots' ),
+			'resetToDefault'     => __( 'Reset to default', 'pleaseup-hotspots' ),
+			'resetFailed'        => __( 'Reset failed', 'pleaseup-hotspots' ),
+			'chooseNormalFirst'  => __( 'Choose a Normal icon first.', 'pleaseup-hotspots' ),
+			'previewNormal'      => __( 'Preview: normal', 'pleaseup-hotspots' ),
+			'previewSelected'    => __( 'Preview: selected', 'pleaseup-hotspots' ),
+			'confirmDeleteAll'   => __( 'Remove all hotspots from this image?', 'pleaseup-hotspots' ),
+			'confirmDeleteOne'   => __( 'Delete this hotspot?', 'pleaseup-hotspots' ),
+			'confirmDeleteImg'   => __( 'Remove all hotspots and per-image settings? This cannot be undone.', 'pleaseup-hotspots' ),
+			'confirmDeleteGall'  => __( 'Delete this gallery? Images and hotspots are kept.', 'pleaseup-hotspots' ),
+			'never'              => __( 'never', 'pleaseup-hotspots' ),
 		);
 	}
 

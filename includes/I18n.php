@@ -28,7 +28,7 @@ final class I18n {
 	 */
 	public function load_textdomain() : void {
 		load_plugin_textdomain(
-			'image-hotspots-tool',
+			'pleaseup-hotspots',
 			false,
 			dirname( plugin_basename( WPHS_PLUGIN_FILE ) ) . '/languages'
 		);

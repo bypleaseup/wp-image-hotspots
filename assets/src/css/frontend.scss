@@ -1,4 +1,4 @@
-/* Image Hotspots Tool — frontend */
+/* Pleaseup Hotspots — frontend */
 .wphs-figure{position:relative;display:inline-block;line-height:0;max-width:100%}
 .wphs-img-overlay{position:absolute;top:0;left:0;overflow:hidden;pointer-events:none;z-index:1}
 .wphs-img-overlay .wphs-dot{pointer-events:auto}
@@ -32,3 +32,17 @@
 .wphs-gallery .wphs-gl-arrow:focus-visible,.wphs-gallery .wphs-gl-dot:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .wphs-figure .wphs-layer-wrap[role="dialog"]{outline:none}
 @media (prefers-reduced-motion: reduce){.wphs-gallery-track{transition:none !important}.wphs-figure .wphs-dot{transition:none !important}.wphs-figure .wphs-layer-wrap{transition:none !important}}
+
+/* Gallery slider — dynamic sizing via CSS custom properties.
+ * cols-d / cols-m / img-radius are set by ShortcodeGallery as inline
+ * `style` on the .wphs-gallery wrapper, so no inline <style> tag is
+ * emitted. Defaults below keep the layout sane if a host strips the
+ * inline custom-property values. */
+.wphs-gallery{--wphs-cols-d:1;--wphs-cols-m:1;--wphs-img-radius:0px}
+.wphs-gallery[data-cols-d] .wphs-gallery-slide{min-width:calc(100% / var(--wphs-cols-d));width:calc(100% / var(--wphs-cols-d));padding:0 4px}
+@media (max-width:600px){.wphs-gallery[data-cols-d] .wphs-gallery-slide{min-width:calc(100% / var(--wphs-cols-m));width:calc(100% / var(--wphs-cols-m))}}
+.wphs-gallery[data-cols-d] .wphs-gallery-slide .wphs-figure img,
+.wphs-gallery[data-cols-d] .wphs-gallery-slide img{border-radius:var(--wphs-img-radius)}
+.wphs-gallery[data-cols-d] .wphs-gallery-slide.has-caption .wphs-figure img,
+.wphs-gallery[data-cols-d] .wphs-gallery-slide.has-caption img{border-radius:var(--wphs-img-radius) var(--wphs-img-radius) 0 0 !important}
+.wphs-gallery[data-cols-d] .wphs-gallery-slide.has-caption .wphs-slide-caption{border-radius:0 0 var(--wphs-img-radius) var(--wphs-img-radius)}

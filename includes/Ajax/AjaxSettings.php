@@ -47,7 +47,7 @@ final class AjaxSettings extends AjaxBase {
 			array(
 				'options'  => $saved,
 				'icon_url' => $icon ? $icon : '',
-				'message'  => __( 'Settings saved', 'image-hotspots-tool' ),
+				'message'  => __( 'Settings saved', 'pleaseup-hotspots' ),
 			)
 		);
 	}
@@ -66,7 +66,7 @@ final class AjaxSettings extends AjaxBase {
 			$current['_use_default_flag'] = true;
 			wp_send_json_success(
 				array(
-					'message'  => __( 'Reverted to global settings', 'image-hotspots-tool' ),
+					'message'  => __( 'Reverted to global settings', 'pleaseup-hotspots' ),
 					'settings' => $current,
 				)
 			);
@@ -84,7 +84,7 @@ final class AjaxSettings extends AjaxBase {
 
 		wp_send_json_success(
 			array(
-				'message'      => __( 'Saved', 'image-hotspots-tool' ),
+				'message'      => __( 'Saved', 'pleaseup-hotspots' ),
 				'settings'     => $saved,
 				'icon_url'     => $icon_url ? $icon_url : '',
 				'sel_icon_url' => $sel_url ? $sel_url : '',

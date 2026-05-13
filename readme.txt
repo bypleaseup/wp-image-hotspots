@@ -1,10 +1,10 @@
-=== Image Hotspots Tool ===
+=== Pleaseup Hotspots - Easy drag and drop hotspots configurator for images ===
 Contributors:      bypleaseup
 Tags:              hotspot, image map, image overlay, tooltip, media library
 Requires at least: 6.0
-Tested up to:      6.9
+Tested up to:      6.8
 Requires PHP:      7.4
-Stable tag:        3.0.0
+Stable tag:        3.0.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Add interactive drag & drop hotspots to any image in your Media Library, Gutenbe
 
 == Description ==
 
-**Image Hotspots Tool** lets you place interactive hotspots directly onto images stored in your Media Library. Each hotspot can display a rich HTML layer (tooltip) when clicked or hovered, making it perfect for product highlights, interactive infographics, wayfinding maps, and more.
+**Pleaseup Hotspots** lets you place interactive hotspots directly onto images stored in your Media Library. Each hotspot can display a rich HTML layer (tooltip) when clicked or hovered, making it perfect for product highlights, interactive infographics, wayfinding maps, and more.
 
 = Key Features =
 
@@ -62,7 +62,7 @@ Themes and plugins can integrate via the following filters and actions:
 
 == Installation ==
 
-1. Upload the `image-hotspots-tool` folder to the `/wp-content/plugins/` directory, or install the plugin directly from the WordPress plugin repository.
+1. Upload the `pleaseup-hotspots` folder to the `/wp-content/plugins/` directory, or install the plugin directly from the WordPress plugin repository.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Navigate to **WP Hotspots → Editor** in the admin sidebar.
 4. Select an image from the Media Library and start adding hotspots.
@@ -129,10 +129,18 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 
 == Changelog ==
 
+= 3.0.1 =
+* Renamed plugin to "Pleaseup Hotspots" (slug `pleaseup-hotspots`) for the WordPress.org Plugin Directory.
+* Frontend: extracted the gallery carousel JavaScript and dynamic CSS to enqueued assets (no more inline `<script>` or `<style>` blocks in the rendered shortcode HTML). The dynamic per-instance values are now passed as CSS custom properties on the wrapper.
+* Admin: the gallery preview now reuses the same enqueued frontend assets so the in-editor preview matches the public render exactly.
+
 = 3.0.0 =
 Initial release.
 
 == Upgrade Notice ==
+
+= 3.0.1 =
+Rename + asset cleanup for WordPress.org Plugin Directory submission. No data migration required.
 
 = 3.0.0 =
 Initial release.

@@ -27,19 +27,19 @@ defined( 'ABSPATH' ) || exit;
 			<?php /* ── Hero ── */ ?>
 			<div class="wphs-hero">
 				<div style="flex:1">
-					<h1><?php echo esc_html__( 'WP Image', 'image-hotspots-tool' ); ?> <span><?php esc_html_e( 'HotSpots', 'image-hotspots-tool' ); ?></span></h1>
+					<h1><?php echo esc_html__( 'WP Image', 'pleaseup-hotspots' ); ?> <span><?php esc_html_e( 'HotSpots', 'pleaseup-hotspots' ); ?></span></h1>
 					<div style="display:flex;align-items:center;gap:14px;margin-top:2px">
-						<a href="https://by.pleaseup.com/image-hotspots-tool/" target="_blank" rel="noopener" class="wphs-hero-credit">by.pleaseup.com</a>
+						<a href="https://by.pleaseup.com/pleaseup-hotspots/" target="_blank" rel="noopener" class="wphs-hero-credit">by.pleaseup.com</a>
 						<span class="wphs-hero-version">v<?php echo esc_html( WPHS_VERSION ); ?></span>
 					</div>
 				</div>
 			</div>
 			<div style="margin:0 0 20px 0;margin-right:16px;padding-bottom:16px;border-bottom:1px solid rgba(16,24,40,.08)">
-				<h2 style="font-size:16px;font-weight:700;color:#0b1220;margin:0 0 6px 0"><?php esc_html_e( 'Editor', 'image-hotspots-tool' ); ?></h2>
-				<p style="font-size:12px;color:#667085;margin:0"><?php esc_html_e( 'Select an image from the Media Library and click on it to place hotspots.', 'image-hotspots-tool' ); ?></p>
-				<p style="font-size:12px;color:#667085;margin:4px 0 12px"><?php esc_html_e( 'Each hotspot can contain rich text. Use the shortcode [wphs_image id="X"] to embed the image anywhere on your site.', 'image-hotspots-tool' ); ?></p>
+				<h2 style="font-size:16px;font-weight:700;color:#0b1220;margin:0 0 6px 0"><?php esc_html_e( 'Editor', 'pleaseup-hotspots' ); ?></h2>
+				<p style="font-size:12px;color:#667085;margin:0"><?php esc_html_e( 'Select an image from the Media Library and click on it to place hotspots.', 'pleaseup-hotspots' ); ?></p>
+				<p style="font-size:12px;color:#667085;margin:4px 0 12px"><?php esc_html_e( 'Each hotspot can contain rich text. Use the shortcode [wphs_image id="X"] to embed the image anywhere on your site.', 'pleaseup-hotspots' ); ?></p>
 				<div style="display:flex;align-items:center;gap:10px">
-					<button type="button" class="wphs-btn-primary wphs-btn-sm" id="wphs-pick">+ <?php esc_html_e( 'Choose image', 'image-hotspots-tool' ); ?></button>
+					<button type="button" class="wphs-btn-primary wphs-btn-sm" id="wphs-pick">+ <?php esc_html_e( 'Choose image', 'pleaseup-hotspots' ); ?></button>
 					<?php if ( $attachment_id ) :
 						$sc = sprintf( '[wphs_image id="%d"]', $attachment_id ); ?>
 						<div class="wphs-shortcode-controls">
@@ -63,8 +63,8 @@ defined( 'ABSPATH' ) || exit;
 									<div class="wphs-empty-icon">
 										<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
 									</div>
-									<h2><?php esc_html_e( 'Select an image to start', 'image-hotspots-tool' ); ?></h2>
-									<p><?php esc_html_e( 'Use the "Choose image" button above.', 'image-hotspots-tool' ); ?></p>
+									<h2><?php esc_html_e( 'Select an image to start', 'pleaseup-hotspots' ); ?></h2>
+									<p><?php esc_html_e( 'Use the "Choose image" button above.', 'pleaseup-hotspots' ); ?></p>
 								</div>
 							<?php endif; ?>
 						</div>
@@ -76,8 +76,8 @@ defined( 'ABSPATH' ) || exit;
 					if ( ! empty( $recent ) ) : ?>
 						<div class="wphs-divider"></div>
 						<div class="wphs-quick-header">
-							<span class="wphs-quick-title"><?php esc_html_e( 'Images with hotspots', 'image-hotspots-tool' ); ?></span>
-							<span class="wphs-quick-sub"><?php esc_html_e( 'Click to open', 'image-hotspots-tool' ); ?></span>
+							<span class="wphs-quick-title"><?php esc_html_e( 'Images with hotspots', 'pleaseup-hotspots' ); ?></span>
+							<span class="wphs-quick-sub"><?php esc_html_e( 'Click to open', 'pleaseup-hotspots' ); ?></span>
 						</div>
 						<div class="wphs-recent-grid">
 						<?php foreach ( $recent as $img ) :
@@ -95,7 +95,7 @@ defined( 'ABSPATH' ) || exit;
 									<small><?php
 									printf(
 										/* translators: %d: number of hotspots on the image. */
-										esc_html( _n( '%d hotspot', '%d hotspots', $hs_count, 'image-hotspots-tool' ) ),
+										esc_html( _n( '%d hotspot', '%d hotspots', $hs_count, 'pleaseup-hotspots' ) ),
 										(int) $hs_count
 									);
 								?></small>
@@ -117,16 +117,16 @@ defined( 'ABSPATH' ) || exit;
 						<?php /* Meta + actions */ ?>
 						<div class="wphs-meta-row">
 							<span>
-								<strong><?php esc_html_e( 'Last save:', 'image-hotspots-tool' ); ?></strong>
-								<span id="wphs-saved-at" style="margin-left:4px"><?php echo $saved_at ? esc_html( $saved_at ) : esc_html__( 'never', 'image-hotspots-tool' ); ?></span>
+								<strong><?php esc_html_e( 'Last save:', 'pleaseup-hotspots' ); ?></strong>
+								<span id="wphs-saved-at" style="margin-left:4px"><?php echo $saved_at ? esc_html( $saved_at ) : esc_html__( 'never', 'pleaseup-hotspots' ); ?></span>
 							</span>
 							<span class="wphs-count-pill" id="wphs-count">0</span>
 						</div>
 
 						<div class="wphs-action-row">
-							<button type="button" class="wphs-btn-ghost wphs-btn-danger" id="wphs-del"><?php esc_html_e( 'Delete', 'image-hotspots-tool' ); ?></button>
-							<button type="button" class="wphs-btn-ghost" id="wphs-clear"><?php esc_html_e( 'Remove all', 'image-hotspots-tool' ); ?></button>
-							<button type="button" class="wphs-btn-primary" id="wphs-save" style="flex:1"><?php esc_html_e( 'Save', 'image-hotspots-tool' ); ?></button>
+							<button type="button" class="wphs-btn-ghost wphs-btn-danger" id="wphs-del"><?php esc_html_e( 'Delete', 'pleaseup-hotspots' ); ?></button>
+							<button type="button" class="wphs-btn-ghost" id="wphs-clear"><?php esc_html_e( 'Remove all', 'pleaseup-hotspots' ); ?></button>
+							<button type="button" class="wphs-btn-primary" id="wphs-save" style="flex:1"><?php esc_html_e( 'Save', 'pleaseup-hotspots' ); ?></button>
 						</div>
 
 						<?php /* HTML editor */ ?>
@@ -150,7 +150,7 @@ defined( 'ABSPATH' ) || exit;
 								)
 							);
 							?>
-							<p class="wphs-muted" style="margin-top:6px"><?php esc_html_e( 'Select a hotspot to edit its content.', 'image-hotspots-tool' ); ?></p>
+							<p class="wphs-muted" style="margin-top:6px"><?php esc_html_e( 'Select a hotspot to edit its content.', 'pleaseup-hotspots' ); ?></p>
 						</div>
 
 
@@ -161,41 +161,41 @@ defined( 'ABSPATH' ) || exit;
 
 						<div class="wphs-settings-panel-head">
 							<div style="display:flex;align-items:center;gap:7px">
-								<h3><?php esc_html_e( 'Hotspot & Tooltip style', 'image-hotspots-tool' ); ?></h3>
-								<span class="wphs-badge wphs-badge-override" id="wphs-img-badge"><?php esc_html_e( 'this image', 'image-hotspots-tool' ); ?></span>
+								<h3><?php esc_html_e( 'Hotspot & Tooltip style', 'pleaseup-hotspots' ); ?></h3>
+								<span class="wphs-badge wphs-badge-override" id="wphs-img-badge"><?php esc_html_e( 'this image', 'pleaseup-hotspots' ); ?></span>
 							</div>
 						</div>
 
 						<?php /* Live preview */ ?>
 						<div style="display:flex;justify-content:flex-end;margin-bottom:6px">
-							<button type="button" id="wphs-preview-toggle" class="wphs-btn-secondary wphs-btn-sm" style="font-size:10px;padding:4px 10px;height:auto"><?php esc_html_e( 'Preview: normal', 'image-hotspots-tool' ); ?></button>
+							<button type="button" id="wphs-preview-toggle" class="wphs-btn-secondary wphs-btn-sm" style="font-size:10px;padding:4px 10px;height:auto"><?php esc_html_e( 'Preview: normal', 'pleaseup-hotspots' ); ?></button>
 						</div>
 						<div class="wphs-unified-preview" id="wphs-unified-preview">
 							<svg id="wphs-preview-svg" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible"><line id="wphs-preview-line" stroke-width="3" fill="none"/></svg>
 							<div class="wphs-preview-dot" id="wphs-preview-dot" style="position:relative;z-index:2;flex-shrink:0;margin-top:4px"></div>
 							<div class="wphs-preview-bubble" id="wphs-preview-bubble" style="position:relative;z-index:2">
 								<div class="wphs-tt-title">Title</div>
-								<div class="wphs-tt-desc"><?php esc_html_e( 'Description…', 'image-hotspots-tool' ); ?></div>
+								<div class="wphs-tt-desc"><?php esc_html_e( 'Description…', 'pleaseup-hotspots' ); ?></div>
 							</div>
 						</div>
 
 						<div id="wphs-img-settings-fields">
 
 							<?php /* Hotspot style */ ?>
-							<div class="wphs-settings-section-label"><?php esc_html_e( 'Hotspot', 'image-hotspots-tool' ); ?></div>
+							<div class="wphs-settings-section-label"><?php esc_html_e( 'Hotspot', 'pleaseup-hotspots' ); ?></div>
 							<div class="wphs-switch-group" id="wphs-img-style-switch">
 								<input type="radio" name="wphs_img_style" value="default" id="wphs-img-style-default" checked />
 								<input type="radio" name="wphs_img_style" value="image"   id="wphs-img-style-image" />
-								<button type="button" class="wphs-switch-opt is-active" data-for="wphs-img-style-default"><?php esc_html_e( 'Default dot', 'image-hotspots-tool' ); ?></button>
-								<button type="button" class="wphs-switch-opt" data-for="wphs-img-style-image" id="wphs-img-style-image-btn"><?php esc_html_e( 'Custom icon', 'image-hotspots-tool' ); ?></button>
+								<button type="button" class="wphs-switch-opt is-active" data-for="wphs-img-style-default"><?php esc_html_e( 'Default dot', 'pleaseup-hotspots' ); ?></button>
+								<button type="button" class="wphs-switch-opt" data-for="wphs-img-style-image" id="wphs-img-style-image-btn"><?php esc_html_e( 'Custom icon', 'pleaseup-hotspots' ); ?></button>
 							</div>
 							<div class="wphs-icon-row" id="wphs-icon-row">
 								<div style="display:flex;flex-direction:column;gap:6px;width:100%">
 									<div style="display:flex;align-items:center;gap:8px">
 										<div class="wphs-icon-box" id="wphs-img-icon-preview"><?php if($img_icon_url): ?><img src="<?php echo esc_url($img_icon_url); ?>" style="max-width:100%;height:auto" alt="" /><?php else: ?><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(16,24,40,.3)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><?php endif; ?></div>
-										<span class="wphs-fl" style="flex:1"><?php esc_html_e( 'Normal', 'image-hotspots-tool' ); ?> <span style="color:#0b1220;font-size:10px;font-weight:800"><?php esc_html_e( '(required)', 'image-hotspots-tool' ); ?></span></span>
-										<button type="button" class="wphs-btn-secondary wphs-btn-sm" id="wphs-img-pick-icon"><?php esc_html_e( 'Choose', 'image-hotspots-tool' ); ?></button>
-										<button type="button" class="wphs-btn-ghost wphs-btn-sm" id="wphs-img-remove-icon"<?php if(!$img_icon_url) echo ' disabled'; ?>><?php esc_html_e( 'Remove', 'image-hotspots-tool' ); ?></button>
+										<span class="wphs-fl" style="flex:1"><?php esc_html_e( 'Normal', 'pleaseup-hotspots' ); ?> <span style="color:#0b1220;font-size:10px;font-weight:800"><?php esc_html_e( '(required)', 'pleaseup-hotspots' ); ?></span></span>
+										<button type="button" class="wphs-btn-secondary wphs-btn-sm" id="wphs-img-pick-icon"><?php esc_html_e( 'Choose', 'pleaseup-hotspots' ); ?></button>
+										<button type="button" class="wphs-btn-ghost wphs-btn-sm" id="wphs-img-remove-icon"<?php if(!$img_icon_url) echo ' disabled'; ?>><?php esc_html_e( 'Remove', 'pleaseup-hotspots' ); ?></button>
 									</div>
 									<div style="display:flex;align-items:center;gap:8px">
 										<?php
@@ -203,9 +203,9 @@ defined( 'ABSPATH' ) || exit;
 										$sel_icon_url = $sel_icon_id ? (wp_get_attachment_image_url($sel_icon_id,'thumbnail') ?: '') : '';
 										?>
 										<div class="wphs-icon-box" id="wphs-img-sel-icon-preview"><?php if($sel_icon_url): ?><img src="<?php echo esc_url($sel_icon_url); ?>" style="max-width:100%;height:auto" alt="" /><?php else: ?><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(16,24,40,.3)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><?php endif; ?></div>
-										<span class="wphs-fl" style="flex:1"><?php esc_html_e( 'Selected', 'image-hotspots-tool' ); ?></span>
-										<button type="button" class="wphs-btn-secondary wphs-btn-sm" id="wphs-img-pick-sel-icon"><?php esc_html_e( 'Choose', 'image-hotspots-tool' ); ?></button>
-										<button type="button" class="wphs-btn-ghost wphs-btn-sm" id="wphs-img-remove-sel-icon"<?php if(!$sel_icon_url) echo ' disabled'; ?>><?php esc_html_e( 'Remove', 'image-hotspots-tool' ); ?></button>
+										<span class="wphs-fl" style="flex:1"><?php esc_html_e( 'Selected', 'pleaseup-hotspots' ); ?></span>
+										<button type="button" class="wphs-btn-secondary wphs-btn-sm" id="wphs-img-pick-sel-icon"><?php esc_html_e( 'Choose', 'pleaseup-hotspots' ); ?></button>
+										<button type="button" class="wphs-btn-ghost wphs-btn-sm" id="wphs-img-remove-sel-icon"<?php if(!$sel_icon_url) echo ' disabled'; ?>><?php esc_html_e( 'Remove', 'pleaseup-hotspots' ); ?></button>
 									</div>
 								</div>
 								<input type="hidden" id="wphs-img-icon-id" value="<?php echo esc_attr( (string)($img_settings['hotspot_image_id'] ?? 0) ); ?>" />
@@ -216,37 +216,37 @@ defined( 'ABSPATH' ) || exit;
 								<?php /* Left col: W + lock + H on same row, Radius below */ ?>
 								<div class="wphs-f" style="display:flex;flex-direction:column;gap:6px">
 									<div style="display:flex;align-items:flex-end;gap:4px">
-										<div class="wphs-f" style="flex:1"><span class="wphs-fl"><?php esc_html_e( 'W', 'image-hotspots-tool' ); ?></span><input type="number" id="wphs-img-dot-width" value="<?php echo absint( $img_settings['dot_width'] ); ?>" min="4" max="256" class="wphs-size-input" /></div>
+										<div class="wphs-f" style="flex:1"><span class="wphs-fl"><?php esc_html_e( 'W', 'pleaseup-hotspots' ); ?></span><input type="number" id="wphs-img-dot-width" value="<?php echo absint( $img_settings['dot_width'] ); ?>" min="4" max="256" class="wphs-size-input" /></div>
 										<button type="button" id="wphs-dot-lock" title="Lock" style="flex-shrink:0;background:#fff;border:1.5px solid rgba(16,24,40,.15);border-radius:6px;padding:5px 6px;cursor:pointer;color:#667085;display:flex;align-items:center;justify-content:center;margin-bottom:1px">
 											<svg id="wphs-lock-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="display:none"><circle cx="12" cy="12" r="10"/></svg>
 											<svg id="wphs-unlock-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
 										</button>
-										<div class="wphs-f" style="flex:1"><span class="wphs-fl"><?php esc_html_e( 'H', 'image-hotspots-tool' ); ?></span><input type="number" id="wphs-img-dot-height" value="<?php echo absint( $img_settings['dot_height'] ); ?>" min="4" max="256" class="wphs-size-input" /></div>
+										<div class="wphs-f" style="flex:1"><span class="wphs-fl"><?php esc_html_e( 'H', 'pleaseup-hotspots' ); ?></span><input type="number" id="wphs-img-dot-height" value="<?php echo absint( $img_settings['dot_height'] ); ?>" min="4" max="256" class="wphs-size-input" /></div>
 									</div>
-									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Radius (px)', 'image-hotspots-tool' ); ?></span><input type="number" id="wphs-img-dot-radius" value="<?php echo absint( $img_settings['dot_radius'] ); ?>" min="0" max="999" class="wphs-size-input" /></div>
+									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Radius (px)', 'pleaseup-hotspots' ); ?></span><input type="number" id="wphs-img-dot-radius" value="<?php echo absint( $img_settings['dot_radius'] ); ?>" min="0" max="999" class="wphs-size-input" /></div>
 								</div>
 
 								<?php /* Right col: Fill, Border */ ?>
 								<div class="wphs-f wphs-dot-color-fields" id="wphs-dot-color-fields" style="display:flex;flex-direction:column;gap:8px">
-									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Fill', 'image-hotspots-tool' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-color" value="#000000" class="wphs-color-input" /><input type="text" id="wphs-img-dot-color-hex" value="#000000" class="wphs-hex-input" maxlength="7" /></div></div>
-									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Border', 'image-hotspots-tool' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-border-color" value="#ffffff" class="wphs-color-input" /><input type="text" id="wphs-img-dot-border-color-hex" value="#ffffff" class="wphs-hex-input" maxlength="7" /></div></div>
-									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Fill selected', 'image-hotspots-tool' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-selected-fill" value="<?php echo esc_attr( $img_settings['dot_selected_fill'] ); ?>" class="wphs-color-input" /><input type="text" id="wphs-img-dot-selected-fill-hex" value="<?php echo esc_attr( $img_settings['dot_selected_fill'] ); ?>" class="wphs-hex-input" maxlength="7" /></div></div>
-									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Border selected', 'image-hotspots-tool' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-selected-border" value="<?php echo esc_attr( $img_settings['dot_selected_border'] ); ?>" class="wphs-color-input" /><input type="text" id="wphs-img-dot-selected-border-hex" value="<?php echo esc_attr( $img_settings['dot_selected_border'] ); ?>" class="wphs-hex-input" maxlength="7" /></div></div>
+									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Fill', 'pleaseup-hotspots' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-color" value="#000000" class="wphs-color-input" /><input type="text" id="wphs-img-dot-color-hex" value="#000000" class="wphs-hex-input" maxlength="7" /></div></div>
+									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Border', 'pleaseup-hotspots' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-border-color" value="#ffffff" class="wphs-color-input" /><input type="text" id="wphs-img-dot-border-color-hex" value="#ffffff" class="wphs-hex-input" maxlength="7" /></div></div>
+									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Fill selected', 'pleaseup-hotspots' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-selected-fill" value="<?php echo esc_attr( $img_settings['dot_selected_fill'] ); ?>" class="wphs-color-input" /><input type="text" id="wphs-img-dot-selected-fill-hex" value="<?php echo esc_attr( $img_settings['dot_selected_fill'] ); ?>" class="wphs-hex-input" maxlength="7" /></div></div>
+									<div class="wphs-f"><span class="wphs-fl"><?php esc_html_e( 'Border selected', 'pleaseup-hotspots' ); ?></span><div class="wphs-color-row"><div class="wphs-color-swatch"></div><input type="color" id="wphs-img-dot-selected-border" value="<?php echo esc_attr( $img_settings['dot_selected_border'] ); ?>" class="wphs-color-input" /><input type="text" id="wphs-img-dot-selected-border-hex" value="<?php echo esc_attr( $img_settings['dot_selected_border'] ); ?>" class="wphs-hex-input" maxlength="7" /></div></div>
 								</div>
 
 							</div>
 
 							<?php /* Tooltip style */ ?>
 							<div class="wphs-settings-section-divider"></div>
-							<div class="wphs-settings-section-label"><?php esc_html_e( 'Tooltip', 'image-hotspots-tool' ); ?></div>
+							<div class="wphs-settings-section-label"><?php esc_html_e( 'Tooltip', 'pleaseup-hotspots' ); ?></div>
 							<div class="wphs-style-grid">
 								<div class="wphs-style-field">
-									<span class="wphs-style-lbl"><?php esc_html_e( 'Border radius (px)', 'image-hotspots-tool' ); ?></span>
+									<span class="wphs-style-lbl"><?php esc_html_e( 'Border radius (px)', 'pleaseup-hotspots' ); ?></span>
 									<input type="number" id="wphs-tt-radius" value="<?php echo absint( $tt_radius ); ?>" min="0" max="32" class="wphs-size-input" />
 								</div>
 								<div style="display:flex;flex-direction:column;gap:8px">
 									<div class="wphs-style-field">
-										<span class="wphs-style-lbl"><?php esc_html_e( 'Background', 'image-hotspots-tool' ); ?></span>
+										<span class="wphs-style-lbl"><?php esc_html_e( 'Background', 'pleaseup-hotspots' ); ?></span>
 										<div class="wphs-color-row">
 											<div class="wphs-color-swatch"></div>
 											<input type="color" id="wphs-tt-bg" value="<?php echo esc_attr( $tt_bg ); ?>" class="wphs-color-input" />
@@ -254,7 +254,7 @@ defined( 'ABSPATH' ) || exit;
 										</div>
 									</div>
 									<div class="wphs-style-field">
-										<span class="wphs-style-lbl"><?php esc_html_e( 'Text', 'image-hotspots-tool' ); ?></span>
+										<span class="wphs-style-lbl"><?php esc_html_e( 'Text', 'pleaseup-hotspots' ); ?></span>
 										<div class="wphs-color-row">
 											<div class="wphs-color-swatch"></div>
 											<input type="color" id="wphs-tt-color" value="<?php echo esc_attr( $tt_color ); ?>" class="wphs-color-input" />
@@ -265,8 +265,8 @@ defined( 'ABSPATH' ) || exit;
 
 							</div><!-- /wphs-style-grid -->
 							<div style="display:flex;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(16,24,40,.08)">
-								<button type="button" class="wphs-btn-ghost" id="wphs-reset-img-settings" style="flex:1"><?php esc_html_e( 'Reset', 'image-hotspots-tool' ); ?></button>
-								<button type="button" class="wphs-btn-primary" id="wphs-save-img-settings" style="flex:1"><?php esc_html_e( 'Save', 'image-hotspots-tool' ); ?></button>
+								<button type="button" class="wphs-btn-ghost" id="wphs-reset-img-settings" style="flex:1"><?php esc_html_e( 'Reset', 'pleaseup-hotspots' ); ?></button>
+								<button type="button" class="wphs-btn-primary" id="wphs-save-img-settings" style="flex:1"><?php esc_html_e( 'Save', 'pleaseup-hotspots' ); ?></button>
 							</div>
 						</div>
 					</div>

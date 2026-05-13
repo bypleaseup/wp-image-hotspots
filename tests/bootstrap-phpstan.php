@@ -15,16 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', '/wordpress/' );
 }
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	define( 'WP_UNINSTALL_PLUGIN', 'image-hotspots-tool/image-hotspots-tool.php' );
+	define( 'WP_UNINSTALL_PLUGIN', 'pleaseup-hotspots/pleaseup-hotspots.php' );
 }
 if ( ! defined( 'WPHS_PLUGIN_FILE' ) ) {
-	define( 'WPHS_PLUGIN_FILE', __DIR__ . '/../image-hotspots-tool.php' );
+	define( 'WPHS_PLUGIN_FILE', __DIR__ . '/../pleaseup-hotspots.php' );
 }
 if ( ! defined( 'WPHS_PLUGIN_DIR' ) ) {
 	define( 'WPHS_PLUGIN_DIR', dirname( __DIR__ ) . '/' );
 }
 if ( ! defined( 'WPHS_PLUGIN_URL' ) ) {
-	define( 'WPHS_PLUGIN_URL', 'https://example.test/wp-content/plugins/image-hotspots-tool/' );
+	define( 'WPHS_PLUGIN_URL', 'https://example.test/wp-content/plugins/pleaseup-hotspots/' );
 }
 if ( ! defined( 'WPHS_VERSION' ) ) {
 	define( 'WPHS_VERSION', '3.0.0-alpha.1' );

@@ -1,5 +1,5 @@
 {
-    "name": "pleaseup/image-hotspots-tool",
+    "name": "pleaseup/pleaseup-hotspots",
     "description": "Add drag & drop hotspots to images from the Media Library, Gutenberg galleries, and ACF fields.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",

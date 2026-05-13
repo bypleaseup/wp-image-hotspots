@@ -3,9 +3,9 @@
  * Capability check helpers.
  *
  * Centralizes capability resolution so AJAX handlers, admin pages and
- * shortcodes share the same authorization rules. Hardens four legacy
- * capability gaps by giving each one a dedicated helper that the
- * rewritten endpoints must call.
+ * shortcodes share the same authorization rules. Hardens the four
+ * baseline gaps flagged by the pre-rewrite security audit by giving
+ * each gap a dedicated helper that the rewritten endpoints must call.
  *
  * @package Pleaseup\WPImageHotspots\Core
  */
@@ -62,7 +62,7 @@ final class Capabilities {
 	/**
 	 * Can the current user resolve an oEmbed server-side?
 	 *
-	 * Closes a legacy capability gap: the
+	 * Closes baseline gap #2 from the pre-rewrite security audit: the
 	 * legacy ajax_resolve_oembed had only a nonce. The rewrite gates
 	 * this to authors and above (`edit_posts`).
 	 *

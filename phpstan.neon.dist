@@ -1,7 +1,7 @@
 parameters:
     level: 5
     paths:
-        - image-hotspots-tool.php
+        - pleaseup-hotspots.php
         - uninstall.php
         - includes
     excludePaths:

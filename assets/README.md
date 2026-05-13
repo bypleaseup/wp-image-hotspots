@@ -24,7 +24,7 @@ assets/
 
 The contents under `src/` are a **verbatim extraction** of the inline
 `heredoc` blocks from the v2.5.80 monolith
-(`/image-hotspots-tool/image-hotspots-tool.php`):
+(`/pleaseup-hotspots/pleaseup-hotspots.php`):
 
 | Source file | Comes from | Original lines |
 | --- | --- | --- |
