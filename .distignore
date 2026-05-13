@@ -14,6 +14,9 @@ Thumbs.db
 .idea
 .editorconfig
 
+# Git placeholders (WordPress.org plugin scanner rejects hidden files)
+.gitkeep
+
 # Sources (only the built /assets/dist/ ships)
 assets/src
 
