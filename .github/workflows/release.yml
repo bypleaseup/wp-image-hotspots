@@ -13,14 +13,14 @@ jobs:
         run: |
           set -e
           TAG="${GITHUB_REF_NAME#v}"
-          HEADER=$(grep -E '^[[:space:]]*\*[[:space:]]+Version:' image-hotspots-tool.php | head -1 | awk '{print $NF}')
+          HEADER=$(grep -E '^[[:space:]]*\*[[:space:]]+Version:' pleaseup-hotspots.php | head -1 | awk '{print $NF}')
           STABLE=$(grep -E '^Stable tag:' readme.txt | awk '{print $NF}')
-          CONST=$(grep -E "define\(\s*'WPHS_VERSION'" image-hotspots-tool.php | sed -E "s/.*'([^']+)'\s*\).*/\1/")
+          CONST=$(grep -E "define\(\s*'WPHS_VERSION'" pleaseup-hotspots.php | sed -E "s/.*'([^']+)'\s*\).*/\1/")
           [ "$TAG" = "$HEADER" ] && [ "$TAG" = "$STABLE" ] && [ "$TAG" = "$CONST" ] || { echo "::error::Version mismatch tag=$TAG header=$HEADER readme=$STABLE const=$CONST"; exit 1; }
       - run: bash bin/build-zip.sh
       - uses: softprops/action-gh-release@v2
         with:
-          files: build/image-hotspots-tool-*.zip
+          files: build/pleaseup-hotspots-*.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

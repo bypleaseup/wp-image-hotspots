@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall handler for Image Hotspots Tool.
+ * Uninstall handler for Pleaseup Hotspots.
  *
  * Removes every option, post meta, and custom post type the plugin
  * created. On multisite the cleanup runs once per site of the network.

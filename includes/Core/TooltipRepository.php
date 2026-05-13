@@ -49,7 +49,7 @@ final class TooltipRepository {
 		$sanitized = Sanitizer::kses_tooltip_html( wp_unslash( $html ) );
 		$title     = sprintf(
 			/* translators: 1: hotspot id, 2: attachment id */
-			__( 'WPHS Tooltip %1$s (att %2$d)', 'image-hotspots-tool' ),
+			__( 'WPHS Tooltip %1$s (att %2$d)', 'pleaseup-hotspots' ),
 			sanitize_text_field( $hotspot_id ),
 			$attachment_id
 		);

@@ -40,5 +40,5 @@ tests-js
 .distignore
 bin
 
-# Internal docs
+# Docs
 readme.md

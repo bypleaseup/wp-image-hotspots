@@ -2,6 +2,8 @@
 /**
  * CRUD for the wphs_gallery custom post type.
  *
+ * Schema follows the documented gallery data model.
+ *
  * @package Pleaseup\WPImageHotspots\Core
  */
 
@@ -83,7 +85,7 @@ final class GalleryRepository {
 	public function save( int $gallery_id, array $input ) : int {
 		$title = isset( $input['title'] )
 			? sanitize_text_field( (string) $input['title'] )
-			: __( 'Untitled gallery', 'image-hotspots-tool' );
+			: __( 'Untitled gallery', 'pleaseup-hotspots' );
 
 		$post_data = array(
 			'post_type'   => PostTypes::GALLERY,

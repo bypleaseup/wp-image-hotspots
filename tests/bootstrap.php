@@ -29,13 +29,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', '/wordpress/' );
 }
 if ( ! defined( 'WPHS_PLUGIN_FILE' ) ) {
-	define( 'WPHS_PLUGIN_FILE', dirname( __DIR__ ) . '/image-hotspots-tool.php' );
+	define( 'WPHS_PLUGIN_FILE', dirname( __DIR__ ) . '/pleaseup-hotspots.php' );
 }
 if ( ! defined( 'WPHS_PLUGIN_DIR' ) ) {
 	define( 'WPHS_PLUGIN_DIR', dirname( __DIR__ ) . '/' );
 }
 if ( ! defined( 'WPHS_PLUGIN_URL' ) ) {
-	define( 'WPHS_PLUGIN_URL', 'https://example.test/wp-content/plugins/image-hotspots-tool/' );
+	define( 'WPHS_PLUGIN_URL', 'https://example.test/wp-content/plugins/pleaseup-hotspots/' );
 }
 if ( ! defined( 'WPHS_VERSION' ) ) {
 	define( 'WPHS_VERSION', '3.0.0-test' );

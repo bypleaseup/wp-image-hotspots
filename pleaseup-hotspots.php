@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name:       Image Hotspots Tool
- * Plugin URI:        https://by.pleaseup.com/image-hotspots-tool/
+ * Plugin Name:       Pleaseup Hotspots - Easy drag and drop hotspots configurator for images
+ * Plugin URI:        https://by.pleaseup.com/pleaseup-hotspots/
  * Description:       Add drag &amp; drop hotspots to images from the Media Library, Gutenberg galleries, and ACF fields. Includes a back-office editor and frontend rendering with HTML layers. Use the shortcode to embed hotspot images anywhere.
- * Version:           3.0.0
+ * Version:           3.0.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Pleaseup
  * Author URI:        https://by.pleaseup.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       image-hotspots-tool
+ * Text Domain:       pleaseup-hotspots
  * Domain Path:       /languages
  *
  * @package Pleaseup\WPImageHotspots
@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'WPHS_PLUGIN_FILE', __FILE__ );
 define( 'WPHS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPHS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPHS_VERSION', '3.0.0' );
+define( 'WPHS_VERSION', '3.0.1' );
 define( 'WPHS_MIN_PHP', '7.4' );
 define( 'WPHS_MIN_WP', '6.0' );
 

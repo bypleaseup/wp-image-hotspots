@@ -24,7 +24,8 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Assets {
 
-	public const HANDLE = 'wphs-frontend';
+	public const HANDLE         = 'wphs-frontend';
+	public const HANDLE_GALLERY = 'wphs-frontend-gallery';
 
 	/**
 	 * Hooked onto wp_enqueue_scripts.
@@ -34,15 +35,21 @@ final class Assets {
 			return;
 		}
 
-		$css_path = WPHS_PLUGIN_DIR . 'assets/dist/css/frontend.css';
-		$js_path  = WPHS_PLUGIN_DIR . 'assets/dist/js/frontend.js';
-		$css_url  = WPHS_PLUGIN_URL . 'assets/dist/css/frontend.css';
-		$js_url   = WPHS_PLUGIN_URL . 'assets/dist/js/frontend.js';
+		$css_path     = WPHS_PLUGIN_DIR . 'assets/dist/css/frontend.css';
+		$js_path      = WPHS_PLUGIN_DIR . 'assets/dist/js/frontend.js';
+		$gallery_path = WPHS_PLUGIN_DIR . 'assets/dist/js/frontend-gallery.js';
+		$css_url      = WPHS_PLUGIN_URL . 'assets/dist/css/frontend.css';
+		$js_url       = WPHS_PLUGIN_URL . 'assets/dist/js/frontend.js';
+		$gallery_url  = WPHS_PLUGIN_URL . 'assets/dist/js/frontend-gallery.js';
 
-		$css_ver = file_exists( $css_path ) ? (string) filemtime( $css_path ) : WPHS_VERSION;
-		$js_ver  = file_exists( $js_path ) ? (string) filemtime( $js_path ) : WPHS_VERSION;
+		$css_ver     = file_exists( $css_path ) ? (string) filemtime( $css_path ) : WPHS_VERSION;
+		$js_ver      = file_exists( $js_path ) ? (string) filemtime( $js_path ) : WPHS_VERSION;
+		$gallery_ver = file_exists( $gallery_path ) ? (string) filemtime( $gallery_path ) : WPHS_VERSION;
 
 		wp_register_style( self::HANDLE, $css_url, array(), $css_ver );
 		wp_register_script( self::HANDLE, $js_url, array( 'jquery' ), $js_ver, true );
+		// Vanilla JS — no jQuery dep. Self-initialises on DOMContentLoaded
+		// and exposes window.wphsInitGalleries() for the admin preview.
+		wp_register_script( self::HANDLE_GALLERY, $gallery_url, array(), $gallery_ver, true );
 	}
 }

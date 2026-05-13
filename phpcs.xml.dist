@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Image Hotspots Tool">
-    <description>WordPress coding standards for the image-hotspots-tool plugin.</description>
+<ruleset name="Pleaseup Hotspots">
+    <description>WordPress coding standards for the pleaseup-hotspots plugin.</description>
 
     <file>.</file>
 
@@ -22,7 +22,7 @@
     <rule ref="WordPress.WP.I18n">
         <properties>
             <property name="text_domain" type="array">
-                <element value="image-hotspots-tool"/>
+                <element value="pleaseup-hotspots"/>
             </property>
         </properties>
     </rule>

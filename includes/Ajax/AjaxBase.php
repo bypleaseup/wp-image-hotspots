@@ -3,8 +3,8 @@
  * Base class for AJAX modules.
  *
  * Centralizes the nonce verification policy so every endpoint uses the
- * same nonce name (`wphs_nonce_v1`), closing a long-standing dual-nonce
- * inconsistency in the legacy code.
+ * same nonce name (`wphs_nonce_v1`), closing the dual-nonce inconsistency
+ * flagged by the pre-rewrite security audit ("doppio nonce-set").
  *
  * @package Pleaseup\WPImageHotspots\Ajax
  */
@@ -44,7 +44,7 @@ abstract class AjaxBase {
 			: '';
 		if ( ! wp_verify_nonce( $nonce, self::NONCE_ACTION ) ) {
 			wp_send_json_error(
-				array( 'message' => __( 'Bad nonce', 'image-hotspots-tool' ) ),
+				array( 'message' => __( 'Bad nonce', 'pleaseup-hotspots' ) ),
 				403
 			);
 		}
@@ -61,7 +61,7 @@ abstract class AjaxBase {
 			return;
 		}
 		wp_send_json_error(
-			array( 'message' => '' === $message ? __( 'Forbidden', 'image-hotspots-tool' ) : $message ),
+			array( 'message' => '' === $message ? __( 'Forbidden', 'pleaseup-hotspots' ) : $message ),
 			403
 		);
 	}

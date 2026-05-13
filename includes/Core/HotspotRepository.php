@@ -2,9 +2,10 @@
 /**
  * CRUD for hotspot data stored as post_meta on attachments.
  *
+ * Persists the hotspot data array attached to media-library attachments.
  * Auto-migrates legacy entries with inline `html` to the CPT-backed
- * `tooltip_id` form on first write (regression-critical: silent upgrade
- * path from pre-3.0 installs).
+ * `tooltip_id` form on first write (regression-critical: required by
+ * the legacy-data migration constraint).
  *
  * @package Pleaseup\WPImageHotspots\Core
  */

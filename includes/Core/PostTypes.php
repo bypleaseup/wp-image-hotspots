@@ -2,8 +2,9 @@
 /**
  * Custom post type registration.
  *
- * The legacy `wphs_tooltip` CPT was used via wp_insert_post() without
- * being registered. The rewrite registers both `wphs_gallery` and
+ * Closes a baseline issue from the legacy v2.5.80 plugin: the
+ * `wphs_tooltip` CPT was used via wp_insert_post() without being
+ * registered. The rewrite registers both `wphs_gallery` and
  * `wphs_tooltip` explicitly on the `init` hook with `public => false`
  * so they are predictable to operators inspecting the database.
  *
@@ -39,8 +40,8 @@ final class PostTypes {
 			self::GALLERY,
 			array(
 				'labels'              => array(
-					'name'          => __( 'Hotspot Galleries', 'image-hotspots-tool' ),
-					'singular_name' => __( 'Hotspot Gallery', 'image-hotspots-tool' ),
+					'name'          => __( 'Hotspot Galleries', 'pleaseup-hotspots' ),
+					'singular_name' => __( 'Hotspot Gallery', 'pleaseup-hotspots' ),
 				),
 				'public'              => false,
 				'show_ui'             => false,
@@ -62,8 +63,8 @@ final class PostTypes {
 			self::TOOLTIP,
 			array(
 				'labels'              => array(
-					'name'          => __( 'Hotspot Tooltips', 'image-hotspots-tool' ),
-					'singular_name' => __( 'Hotspot Tooltip', 'image-hotspots-tool' ),
+					'name'          => __( 'Hotspot Tooltips', 'pleaseup-hotspots' ),
+					'singular_name' => __( 'Hotspot Tooltip', 'pleaseup-hotspots' ),
 				),
 				'public'              => false,
 				'show_ui'             => false,

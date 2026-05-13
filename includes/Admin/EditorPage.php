@@ -19,10 +19,11 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Prepares the data for the editor template and includes the partial.
  *
- * Note: by convention, partials do not perform DB queries. The legacy
- * editor template still contains a couple of `get_post_meta()` calls
- * (one per recent-image thumbnail) that survived the verbatim extraction;
- * they are tracked for a future cleanup PR.
+ * Note: the plugin's architectural rules forbid DB calls inside
+ * partials. The legacy editor template still contains a couple of
+ * `get_post_meta()` calls (one per recent-image thumbnail) that survived
+ * the verbatim extraction; they are tracked as follow-up debt and will
+ * be moved here in a later cleanup PR.
  */
 final class EditorPage {
 

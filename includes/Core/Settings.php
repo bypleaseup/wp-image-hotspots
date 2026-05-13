@@ -2,8 +2,8 @@
 /**
  * Settings repository — global plugin options + per-attachment override.
  *
- * Defines the data shape, defaults, validation rules and override merge
- * semantics for plugin settings.
+ * Data shape, defaults, validation rules and override merge semantics
+ * follow the documented settings data model verbatim.
  *
  * @package Pleaseup\WPImageHotspots\Core
  */

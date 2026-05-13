@@ -4,7 +4,7 @@
  *
  * Mirrors the legacy WPHS_Hotspots_Drag_Drop::resolve_oembed() behavior
  * but exposes the provider list through the `wphs_oembed_providers`
- * filter so third-party code can extend it.
+ * filter.
  *
  * @package Pleaseup\WPImageHotspots\Helpers
  */

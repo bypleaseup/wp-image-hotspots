@@ -2,8 +2,8 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: Image Hotspots Tool 3.0.0\n"
-"Report-Msgid-Bugs-To: https://by.pleaseup.com/image-hotspots-tool/\n"
+"Project-Id-Version: Pleaseup Hotspots 3.0.1\n"
+"Report-Msgid-Bugs-To: https://by.pleaseup.com/pleaseup-hotspots/\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,16 +12,16 @@ msgstr ""
 "PO-Revision-Date: 2026-05-08 10:20+0000\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: wphs-makepot.php\n"
-"X-Domain: image-hotspots-tool\n"
+"X-Domain: pleaseup-hotspots\n"
 
-#: includes/Frontend/ShortcodeGallery.php:130
-#: includes/Frontend/ShortcodeGallery.php:348
+#: includes/Frontend/ShortcodeGallery.php:126
+#: includes/Frontend/ShortcodeGallery.php:206
 msgctxt "gallery navigation"
 msgid "Next"
 msgstr ""
 
-#: includes/Frontend/ShortcodeGallery.php:129
-#: includes/Frontend/ShortcodeGallery.php:347
+#: includes/Frontend/ShortcodeGallery.php:125
+#: includes/Frontend/ShortcodeGallery.php:205
 msgctxt "gallery navigation"
 msgid "Previous"
 msgstr ""

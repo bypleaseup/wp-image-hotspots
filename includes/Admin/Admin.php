@@ -3,7 +3,8 @@
  * Admin bootstrap.
  *
  * Wires the admin menu, the asset enqueue layer and the page renderers.
- * Admin classes never touch frontend code.
+ * Admin classes never touch frontend code (separation of concerns
+ * is a hard architectural rule of the plugin).
  *
  * @package Pleaseup\WPImageHotspots\Admin
  */
@@ -54,8 +55,8 @@ final class Admin {
 	 */
 	public function register_menu() : void {
 		add_menu_page(
-			__( 'WP Hotspots', 'image-hotspots-tool' ),
-			__( 'WP Hotspots', 'image-hotspots-tool' ),
+			__( 'WP Hotspots', 'pleaseup-hotspots' ),
+			__( 'WP Hotspots', 'pleaseup-hotspots' ),
 			'manage_options',
 			'wphs-editor',
 			array( $this->editor_page, 'render' ),
@@ -65,8 +66,8 @@ final class Admin {
 
 		add_submenu_page(
 			'wphs-editor',
-			__( 'Editor Hotspots', 'image-hotspots-tool' ),
-			__( 'Editor', 'image-hotspots-tool' ),
+			__( 'Editor Hotspots', 'pleaseup-hotspots' ),
+			__( 'Editor', 'pleaseup-hotspots' ),
 			'manage_options',
 			'wphs-editor',
 			array( $this->editor_page, 'render' )
@@ -74,8 +75,8 @@ final class Admin {
 
 		add_submenu_page(
 			'wphs-editor',
-			__( 'Galleries', 'image-hotspots-tool' ),
-			__( 'Galleries', 'image-hotspots-tool' ),
+			__( 'Galleries', 'pleaseup-hotspots' ),
+			__( 'Galleries', 'pleaseup-hotspots' ),
 			'manage_options',
 			'wphs-galleries',
 			array( $this->galleries_page, 'render' )
@@ -91,7 +92,7 @@ final class Admin {
 	public function plugin_action_links( array $links ) : array {
 		$editor = admin_url( 'admin.php?page=wphs-editor' );
 		$custom = array(
-			'<a href="' . esc_url( $editor ) . '">' . esc_html__( 'Editor', 'image-hotspots-tool' ) . '</a>',
+			'<a href="' . esc_url( $editor ) . '">' . esc_html__( 'Editor', 'pleaseup-hotspots' ) . '</a>',
 		);
 		return array_merge( $custom, $links );
 	}
