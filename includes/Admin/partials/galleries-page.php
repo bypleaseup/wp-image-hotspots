@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="wphs-hero">
 		<div style="flex:1">
-			<h1><?php echo esc_html__( 'WP Image', 'pleaseup-hotspots' ); ?> <span><?php esc_html_e( 'HotSpots', 'pleaseup-hotspots' ); ?></span></h1>
+			<h1><?php echo esc_html__( 'Pleaseup', 'pleaseup-hotspots' ); ?> <span><?php esc_html_e( 'Hotspots', 'pleaseup-hotspots' ); ?></span></h1>
 			<div style="display:flex;align-items:center;gap:14px;margin-top:2px">
 				<a href="https://by.pleaseup.com/pleaseup-hotspots/" target="_blank" rel="noopener" class="wphs-hero-credit">by.pleaseup.com</a>
 				<span class="wphs-hero-version">v<?php echo esc_html( WPHS_VERSION ); ?></span>
