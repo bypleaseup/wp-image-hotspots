@@ -42,6 +42,51 @@ jobs:
         with:
           ref: ${{ github.event.inputs.tag || github.ref }}
 
+      # The 10up action derives VERSION from $VERSION env var if set,
+      # else from $GITHUB_REF stripping `refs/tags/` + `v` prefix.
+      # On workflow_dispatch, GITHUB_REF is `refs/heads/main` which the
+      # default logic can't strip — the action ends up trying to
+      # `svn cp trunk tags/refs/heads/main` and dies. So we compute
+      # the version ourselves and pass it through explicitly.
+      - name: Resolve deploy version
+        id: vars
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "${{ github.event.inputs.tag }}" ]]; then
+            RAW="${{ github.event.inputs.tag }}"
+          else
+            RAW="${GITHUB_REF}"
+          fi
+          VERSION="${RAW#refs/tags/}"
+          VERSION="${VERSION#refs/heads/}"
+          VERSION="${VERSION#v}"
+          echo "Resolved deploy VERSION='${VERSION}'"
+          if ! [[ "${VERSION}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::VERSION '${VERSION}' is not a valid X.Y.Z. For workflow_dispatch, pass tag input like 'v3.0.4'."
+            exit 1
+          fi
+          echo "VERSION=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      # Sanity check that `.wporg-assets/` is in the workspace before
+      # handing off to the 10up action. Previous run logged
+      # "No assets directory found" despite the dir being committed —
+      # this step makes the next failure (if any) self-diagnosing.
+      - name: Workspace sanity check
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          echo "--- workspace root ---"
+          ls -la "$GITHUB_WORKSPACE/"
+          echo "--- .wporg-assets check ---"
+          if [[ -d "$GITHUB_WORKSPACE/.wporg-assets/" ]]; then
+            echo "  found"
+            ls -la "$GITHUB_WORKSPACE/.wporg-assets/"
+          else
+            echo "  NOT found"
+            exit 1
+          fi
+
       - name: WordPress Plugin Deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
         env:
@@ -49,4 +94,5 @@ jobs:
           SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
           SLUG: pleaseup-hotspots
           ASSETS_DIR: .wporg-assets
+          VERSION: ${{ steps.vars.outputs.VERSION }}
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
