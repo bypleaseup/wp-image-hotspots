@@ -45,3 +45,5 @@ bin
 
 # Docs
 readme.md
+# WP.org page assets (banner/icon/screenshots, NOT part of the plugin code)
+.wporg-assets

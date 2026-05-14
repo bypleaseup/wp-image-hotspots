@@ -26,3 +26,4 @@ tests-js/       export-ignore
 assets/src/     export-ignore
 readme.md       export-ignore
 bin/            export-ignore
+.wporg-assets/ export-ignore
