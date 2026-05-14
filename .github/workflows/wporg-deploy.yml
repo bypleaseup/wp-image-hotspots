@@ -23,9 +23,14 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to (re)deploy, e.g. v3.0.3'
+        description: 'Tag to (re)deploy, e.g. v3.0.3. Required when running manually.'
         required: true
         type: string
+      dry_run:
+        description: 'Dry run: validate credentials + SVN access, do NOT commit'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   deploy:
@@ -33,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.tag || github.ref }}
 
@@ -44,3 +49,4 @@ jobs:
           SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
           SLUG: pleaseup-hotspots
           ASSETS_DIR: .wporg-assets
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
