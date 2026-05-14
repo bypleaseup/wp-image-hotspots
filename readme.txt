@@ -103,11 +103,7 @@ Yes. When you uninstall the plugin (not just deactivate it), all hotspot setting
 
 == Screenshots ==
 
-1. The drag & drop hotspot editor in the WordPress back-office.
-2. Selecting an image from the Media Library to begin editing.
-3. Editing the HTML content of a hotspot layer with the built-in WP editor.
-4. Frontend rendering with hotspot dots and an open tooltip layer.
-5. Plugin settings page — choose hotspot style and custom icon.
+1. Plugin admin overview — image hotspot collections listed in the WordPress back-office.
 
 == External services ==
 
