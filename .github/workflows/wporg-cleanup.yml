@@ -1,0 +1,65 @@
+name: WP.org SVN cleanup
+
+# One-shot maintenance: removes stale files from SVN /trunk that
+# slipped in during the manual first commit, before the case-sensitive
+# .distignore was tightened (README.md vs readme.md, build/ leftover
+# from bin/build-zip.sh staging, etc).
+#
+# Why this matters: 10up/action-wordpress-plugin-asset-update refuses
+# to commit a readme/assets update if it sees other dirty files in
+# trunk. Those dirty files come from the SVN side (they exist in SVN
+# but the rsync-from-workspace step "deletes" them locally), so the
+# action sees "Other files have been modified" and aborts.
+#
+# Run this once via workflow_dispatch after .distignore is tightened.
+# Subsequent asset-update runs and tag deploys keep the trunk clean
+# via rsync --delete-excluded.
+#
+# Reuses WPORG_SVN_USERNAME / WPORG_SVN_PASSWORD secrets.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    name: Remove stale files from SVN trunk
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install svn
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq subversion
+
+      - name: Cleanup
+        env:
+          SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+        run: |
+          set -euo pipefail
+          svn checkout --non-interactive --no-auth-cache \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD" \
+            https://plugins.svn.wordpress.org/pleaseup-hotspots svn-work
+          cd svn-work
+
+          REMOVED=0
+          for path in \
+              trunk/build \
+              trunk/README.md \
+              trunk/assets/README.md ; do
+            if [[ -e "$path" ]]; then
+              svn rm "$path"
+              echo "removed: $path"
+              REMOVED=1
+            else
+              echo "absent (already clean): $path"
+            fi
+          done
+
+          if [[ "$REMOVED" -eq 1 ]]; then
+            svn commit --non-interactive --no-auth-cache \
+              --username "$SVN_USERNAME" --password "$SVN_PASSWORD" \
+              -m "Remove stale README.md / assets/README.md / build/ from trunk"
+            echo "cleanup commit done"
+          else
+            echo "no cleanup needed"
+          fi

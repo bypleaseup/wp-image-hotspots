@@ -42,8 +42,12 @@ tests-js
 # Distribution
 .distignore
 bin
+build
 
 # Docs
 readme.md
+README.md
+assets/README.md
+
 # WP.org page assets (banner/icon/screenshots, NOT part of the plugin code)
 .wporg-assets
