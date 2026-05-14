@@ -1,20 +1,18 @@
-=== Pleaseup Hotspots - Easy drag and drop hotspots configurator for images ===
+=== Image Hotspots by Pleaseup – Interactive Image Map & Tooltips ===
 Contributors:      bypleaseup
-Tags:              hotspot, image map, image overlay, tooltip, media library
+Tags:              image hotspot, image map, interactive image, tooltip, annotation
 Requires at least: 6.0
 Tested up to:      6.9
 Requires PHP:      7.4
-Stable tag:        3.0.3
+Stable tag:        3.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Add interactive drag & drop hotspots to any image in your Media Library, Gutenberg galleries, or ACF fields.
+Interactive image hotspots with drag & drop editor. Add tooltips, annotations, and image maps. Works with Gutenberg, ACF, and galleries.
 
 == Description ==
 
-**Pleaseup Hotspots** lets you place interactive hotspots directly onto images stored in your Media Library. Each hotspot can display a rich HTML layer (tooltip) when clicked or hovered, making it perfect for product highlights, interactive infographics, wayfinding maps, and more.
-
-<image src="https://by.pleaseup.com/pleaseup-hotspots/wp-content/uploads/2026/03/screencapture-by-pleaseup-wordpress-image-hotspots-drag-and-drop-wp-admin-admin-php-2026-03-30-16_05_29-scaled.png" />
+**Image Hotspots by Pleaseup** is a responsive **image hotspot** plugin that lets you add **interactive image maps**, **tooltips**, and **annotations** to any image with a visual drag & drop editor.
 
 = Key Features =
 
@@ -66,14 +64,14 @@ Themes and plugins can integrate via the following filters and actions:
 
 1. Upload the `pleaseup-hotspots` folder to the `/wp-content/plugins/` directory, or install the plugin directly from the WordPress plugin repository.
 2. Activate the plugin through the **Plugins** menu in WordPress.
-3. Navigate to **Pleaseup Hotspots → Editor** in the admin sidebar.
+3. Navigate to **Image Hotspots → Editor** in the admin sidebar.
 4. Select an image from the Media Library and start adding hotspots.
 
 == Frequently Asked Questions ==
 
 = How do I add a hotspot to an image? =
 
-Go to **Pleaseup Hotspots → Editor**, select an image from the Media Library, then click anywhere on the image preview to create a hotspot. Drag it to reposition it, then click the hotspot to edit the HTML content of the popup layer.
+Go to **Image Hotspots → Editor**, select an image from the Media Library, then click anywhere on the image preview to create a hotspot. Drag it to reposition it, then click the hotspot to edit the HTML content of the popup layer.
 
 = How do I display the image with hotspots on the front end? =
 
@@ -131,6 +129,12 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 
 == Changelog ==
 
+= 3.1.0 =
+* Rebranded plugin display name to "Image Hotspots by Pleaseup" for better discoverability on WordPress.org search.
+* Updated readme tags and short description for clarity.
+* Admin menu label updated to "Image Hotspots" (page title remains in the same location).
+* No functional or breaking changes — existing shortcodes, settings, hooks, post types, and stored data remain fully compatible.
+
 = 3.0.3 =
 * Build: excluded `.gitkeep` placeholder files from the distribution zip (WordPress.org plugin scanner flags any hidden file).
 * readme.txt: bumped "Tested up to" to 6.9.
@@ -149,6 +153,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 Initial release.
 
 == Upgrade Notice ==
+
+= 3.1.0 =
+Rebrand to "Image Hotspots by Pleaseup" + admin menu label refresh. No data migration, all existing shortcodes (`[wphs_image]`, `[wphs_gallery]`) and settings continue to work.
 
 = 3.0.3 =
 Distribution hygiene fix: hidden .gitkeep files excluded from the zip; readme tested-up-to bumped to 6.9. No data migration required.
