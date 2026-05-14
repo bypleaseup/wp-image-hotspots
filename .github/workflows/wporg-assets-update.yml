@@ -1,0 +1,56 @@
+name: Update WordPress.org plugin page assets
+
+# Syncs banner/icon/screenshot images and readme.txt to the
+# WordPress.org plugin page without bumping the plugin version.
+#
+# Use this when you want to:
+#   - Replace the banner or icon on the plugin page.
+#   - Add/replace screenshots.
+#   - Edit the plugin description, FAQ, or changelog in readme.txt
+#     between releases (the 10up asset-update action will also push
+#     readme.txt changes into /trunk and tags/<Stable tag>).
+#
+# For full code releases (PHP changes, version bump), use
+# wporg-deploy.yml instead.
+#
+# Triggered automatically when .wporg-assets/ or readme.txt changes
+# land on main, or manually via workflow_dispatch.
+#
+# Reuses the same repository secrets as wporg-deploy.yml:
+#   WPORG_SVN_USERNAME, WPORG_SVN_PASSWORD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.wporg-assets/**'
+      - 'readme.txt'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update WP.org assets + readme
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Workspace sanity check
+        shell: bash
+        run: |
+          echo "--- .wporg-assets ---"
+          if [[ -d .wporg-assets ]]; then
+            ls -la .wporg-assets/
+          else
+            echo "  NOT found"; exit 1
+          fi
+          echo "--- readme.txt header ---"
+          head -10 readme.txt
+
+      - name: WordPress.org plugin assets/readme update
+        uses: 10up/action-wordpress-plugin-asset-update@stable
+        env:
+          SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+          SLUG: pleaseup-hotspots
+          ASSETS_DIR: .wporg-assets
