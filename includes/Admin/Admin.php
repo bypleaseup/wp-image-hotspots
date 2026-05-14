@@ -51,12 +51,12 @@ final class Admin {
 	}
 
 	/**
-	 * Register the Pleaseup Hotspots top-level menu and its two submenus.
+	 * Register the Image Hotspots top-level menu and its two submenus.
 	 */
 	public function register_menu() : void {
 		add_menu_page(
-			__( 'Pleaseup Hotspots', 'pleaseup-hotspots' ),
-			__( 'Pleaseup Hotspots', 'pleaseup-hotspots' ),
+			__( 'Image Hotspots', 'pleaseup-hotspots' ),
+			__( 'Image Hotspots', 'pleaseup-hotspots' ),
 			'manage_options',
 			'wphs-editor',
 			array( $this->editor_page, 'render' ),

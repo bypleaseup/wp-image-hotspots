@@ -29,19 +29,23 @@ in `readme.txt`.
 
 ## How they reach WordPress.org
 
-These files live in the AIDHA monorepo as the source-of-truth. To
-publish or update them on WP.org, they need to land in the SVN
-repository's `/assets/` directory:
+The preferred path is the automated workflow `wporg-assets-update.yml`:
+push a change under `.wporg-assets/` (or to `readme.txt`) onto `main`
+and the workflow uses `10up/action-wordpress-plugin-asset-update@stable`
+to sync the new files into the SVN `/assets/` directory of
+`https://plugins.svn.wordpress.org/pleaseup-hotspots/`.
+
+For an out-of-band update (no GitHub Actions), the manual fallback is:
 
 ```bash
 # After a regular bin/svn-release.sh run that staged trunk + tags,
 # copy the assets in too:
-rsync -a /path/to/aidha/.wporg-assets/ ~/.wphs-svn/pleaseup-hotspots/assets/
+rsync -a /path/to/repo/.wporg-assets/ ~/.wphs-svn/pleaseup-hotspots/assets/
 cd ~/.wphs-svn/pleaseup-hotspots
 svn add --force assets
 svn commit -m "Update plugin page assets" --username YOUR_WP_ORG_USERNAME
 ```
 
-`bin/svn-release.sh` does **not** touch `/assets/` on every release —
-asset updates are intentionally a separate, manual step (you usually
-want to update them less often than the plugin code itself).
+`bin/svn-release.sh` itself does **not** touch `/assets/` on every
+release — asset updates are intentionally a separate concern (you
+usually want to update them less often than the plugin code itself).
