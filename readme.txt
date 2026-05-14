@@ -14,6 +14,10 @@ Interactive image hotspots with drag & drop editor. Add tooltips, annotations, a
 
 **Image Hotspots by Pleaseup** is a responsive **image hotspot** plugin that lets you add **interactive image maps**, **tooltips**, and **annotations** to any image with a visual drag & drop editor.
 
+== Screenshots ==
+
+1. Plugin admin overview — image hotspot collections listed in the WordPress back-office.
+
 = Key Features =
 
 * **Drag & drop editor** — add, move, and delete hotspots visually in the WordPress back-office.
@@ -100,10 +104,6 @@ Yes. The plugin stores hotspot data as post meta on the attachment, so any image
 = Will uninstalling the plugin delete my data? =
 
 Yes. When you uninstall the plugin (not just deactivate it), all hotspot settings, attachment meta, and the plugin's custom post type contents (galleries and tooltips) are removed from the database.
-
-== Screenshots ==
-
-1. Plugin admin overview — image hotspot collections listed in the WordPress back-office.
 
 == External services ==
 
