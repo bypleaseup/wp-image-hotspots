@@ -14,6 +14,8 @@ Add interactive drag & drop hotspots to any image in your Media Library, Gutenbe
 
 **Pleaseup Hotspots** lets you place interactive hotspots directly onto images stored in your Media Library. Each hotspot can display a rich HTML layer (tooltip) when clicked or hovered, making it perfect for product highlights, interactive infographics, wayfinding maps, and more.
 
+<image src="https://by.pleaseup.com/pleaseup-hotspots/wp-content/uploads/2026/03/screencapture-by-pleaseup-wordpress-image-hotspots-drag-and-drop-wp-admin-admin-php-2026-03-30-16_05_29-scaled.png" />
+
 = Key Features =
 
 * **Drag & drop editor** — add, move, and delete hotspots visually in the WordPress back-office.
