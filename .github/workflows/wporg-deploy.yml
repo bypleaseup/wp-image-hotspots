@@ -1,0 +1,46 @@
+name: Deploy to WordPress.org
+
+# Publishes the plugin to https://wordpress.org/plugins/pleaseup-hotspots/
+# by committing to the WP.org SVN repository (trunk + new tag + /assets).
+#
+# Triggered when a GitHub Release is published by .github/workflows/release.yml.
+# The dispatched workflow runs on the tagged commit (the `release` event sets
+# GITHUB_SHA to the tag), so the deployed code is byte-identical to the GitHub
+# Release zip.
+#
+# Required repository secrets:
+#   WPORG_SVN_USERNAME  WordPress.org username (e.g. "bypleaseup")
+#   WPORG_SVN_PASSWORD  SVN password from
+#                       https://profiles.wordpress.org/me/profile/edit/group/3/?screen=svn-password
+#
+# Security note: these SVN credentials are *account-wide* on WP.org. Rotate
+# them at the URL above and update both GitHub secrets if you ever suspect
+# they have leaked.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to (re)deploy, e.g. v3.0.3'
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    name: Deploy to WordPress.org SVN
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+          SLUG: pleaseup-hotspots
+          ASSETS_DIR: .wporg-assets
