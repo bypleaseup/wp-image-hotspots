@@ -10,6 +10,8 @@ Internal development happens in a separate, private monorepo;
 each public release is mirrored here as a single commit, tagged with
 the corresponding version.
 
+<image src="https://by.pleaseup.com/pleaseup-hotspots/wp-content/uploads/2026/03/screencapture-by-pleaseup-wordpress-image-hotspots-drag-and-drop-wp-admin-admin-php-2026-03-30-16_05_29-scaled.png" />
+
 ## Install
 
 The recommended installation path is from the WordPress admin:
