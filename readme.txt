@@ -2,9 +2,9 @@
 Contributors:      bypleaseup
 Tags:              image hotspot, image map, interactive image, tooltip, annotation
 Requires at least: 6.0
-Tested up to:      6.9
+Tested up to:      7.0
 Requires PHP:      7.4
-Stable tag:        3.1.0
+Stable tag:        3.1.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 
 == Changelog ==
 
+= 3.1.1 =
+* Compatibility: declared "Tested up to" WordPress 7.0. No code changes — the plugin uses only long-stable WordPress Core APIs and was verified compatible with the 7.0 release.
+
 = 3.1.0 =
 * Rebranded plugin display name to "Image Hotspots by Pleaseup" for better discoverability on WordPress.org search.
 * Updated readme tags and short description for clarity.
@@ -149,6 +152,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 Initial release.
 
 == Upgrade Notice ==
+
+= 3.1.1 =
+Compatibility refresh: declared support for WordPress 7.0. No data migration, no breaking changes.
 
 = 3.1.0 =
 Rebrand to "Image Hotspots by Pleaseup" + admin menu label refresh. No data migration, all existing shortcodes (`[wphs_image]`, `[wphs_gallery]`) and settings continue to work.
