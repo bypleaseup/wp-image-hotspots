@@ -4,7 +4,7 @@ Tags:              image hotspot, image map, interactive image, tooltip, annotat
 Requires at least: 6.0
 Tested up to:      7.0
 Requires PHP:      7.4
-Stable tag:        3.1.1
+Stable tag:        3.1.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,6 +125,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 
 == Changelog ==
 
+= 3.1.2 =
+* Release pipeline hotfix: forces a clean re-deploy. The 3.1.1 tag landed on WordPress.org SVN with the pre-bump code due to a release-event race condition that fired before the version-coherence sanity check. Plugin payload is identical to the intended 3.1.1.
+
 = 3.1.1 =
 * Compatibility: declared "Tested up to" WordPress 7.0. No code changes — the plugin uses only long-stable WordPress Core APIs and was verified compatible with the 7.0 release.
 
@@ -152,6 +155,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 Initial release.
 
 == Upgrade Notice ==
+
+= 3.1.2 =
+Re-deploy of 3.1.1 (Tested up to WordPress 7.0) after a pipeline race condition shipped stale code under the 3.1.1 tag. No data migration, no breaking changes.
 
 = 3.1.1 =
 Compatibility refresh: declared support for WordPress 7.0. No data migration, no breaking changes.
