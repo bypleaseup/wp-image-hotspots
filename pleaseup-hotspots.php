@@ -3,7 +3,7 @@
  * Plugin Name:       Image Hotspots by Pleaseup – Interactive Image Map & Tooltips
  * Plugin URI:        https://wordpress.org/plugins/pleaseup-hotspots/
  * Description:       Interactive image hotspots with drag &amp; drop editor. Add tooltips, annotations, and image maps.
- * Version:           3.1.1
+ * Version:           3.1.2
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Pleaseup
@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'WPHS_PLUGIN_FILE', __FILE__ );
 define( 'WPHS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPHS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'WPHS_VERSION', '3.1.1' );
+define( 'WPHS_VERSION', '3.1.2' );
 define( 'WPHS_MIN_PHP', '7.4' );
 define( 'WPHS_MIN_WP', '6.0' );
 
