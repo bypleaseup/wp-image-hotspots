@@ -14,6 +14,14 @@ Interactive image hotspots with drag & drop editor. Compatible with Elementor, G
 
 **Image Hotspots by Pleaseup** is a responsive **image hotspot** plugin that lets you add **interactive image maps**, **tooltips**, and **annotations** to any image with a visual drag & drop editor. Fully compatible with **Elementor** (free and Pro), the **Gutenberg** block editor, and **ACF** — no add-on required.
 
+= Works seamlessly with Elementor =
+
+Image Hotspots by Pleaseup is fully compatible with **Elementor**, both the free version and Elementor Pro. Every hotspot image and hotspot gallery you build in the WordPress admin renders live inside the Elementor editor preview and on the front end — no add-on, no bridge plugin, no Elementor Pro licence required.
+
+Drop Elementor's built-in **Shortcode** widget (found in the Basic panel of the Elementor widget library) anywhere on your page, paste `[wphs_image id="123"]` or `[wphs_gallery id="X"]`, and the interactive image with drag-and-drop hotspots and HTML tooltips appears instantly. Assets are enqueued only on Elementor pages that actually use the shortcode, so your Elementor site stays fast and lightweight.
+
+Because the plugin works through the standard Elementor Shortcode widget, everything you configure inside Image Hotspots — custom hotspot icons, style presets, tooltip HTML, oEmbed videos, responsive breakpoints, accessibility labels — carries over into Elementor with zero extra configuration.
+
 == Screenshots ==
 
 1. Plugin admin overview — image hotspot collections listed in the WordPress back-office.
@@ -87,9 +95,15 @@ Use the shortcode `[wphs_image id="123"]` where `123` is the attachment ID of th
 
 Yes. Hotspots are stored against the attachment ID, so any block that references that attachment (image block, gallery block, ACF image fields) inherits the configured hotspots when rendered through the `[wphs_image]` shortcode.
 
-= Does it work with page builders (Elementor, Divi, Beaver Builder)? =
+= Can I use Image Hotspots with Elementor? =
 
-Yes via the `[wphs_image]` and `[wphs_gallery]` shortcodes. CSS and JS are enqueued defensively for builders that render shortcodes after `wp_head`.
+Yes. Image Hotspots by Pleaseup works out of the box with **Elementor** — both the free version and Elementor Pro. In the Elementor editor, drag the built-in **Shortcode** widget (Basic panel) into any container, then paste `[wphs_image id="123"]` (replacing `123` with your image's attachment ID) or `[wphs_gallery id="X"]`. The interactive image with hotspots and tooltips renders live inside the Elementor editor preview and on the front end. No third-party bridge plugin, no Elementor add-on marketplace purchase, and no Elementor Pro licence is required.
+
+Elementor caching and lazy-loading are respected: the plugin enqueues its CSS and JS defensively so the interactive layer initialises correctly even on Elementor pages that render shortcodes after `wp_head`.
+
+= Does it work with Divi, Beaver Builder, and other page builders? =
+
+Yes via the `[wphs_image]` and `[wphs_gallery]` shortcodes. Any builder that renders standard WordPress shortcodes — including Divi, Beaver Builder, WPBakery, Bricks, and Oxygen — works out of the box. CSS and JS are enqueued defensively for builders that render shortcodes after `wp_head`.
 
 = Are hotspot positions responsive? =
 
