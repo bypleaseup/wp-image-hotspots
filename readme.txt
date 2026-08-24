@@ -1,6 +1,6 @@
 === Image Hotspots by Pleaseup – Interactive Image Map & Tooltips ===
 Contributors:      bypleaseup
-Tags:              image hotspot, image map, interactive image, tooltip, annotation
+Tags:              image hotspot, image map, elementor, interactive image, tooltip
 Requires at least: 6.0
 Tested up to:      7.0
 Requires PHP:      7.4
@@ -8,11 +8,11 @@ Stable tag:        3.1.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Interactive image hotspots with drag & drop editor. Add tooltips, annotations, and image maps. Works with Gutenberg, ACF, and galleries.
+Interactive image hotspots with drag & drop editor. Compatible with Elementor, Gutenberg, and ACF. Add tooltips, annotations, and image maps.
 
 == Description ==
 
-**Image Hotspots by Pleaseup** is a responsive **image hotspot** plugin that lets you add **interactive image maps**, **tooltips**, and **annotations** to any image with a visual drag & drop editor.
+**Image Hotspots by Pleaseup** is a responsive **image hotspot** plugin that lets you add **interactive image maps**, **tooltips**, and **annotations** to any image with a visual drag & drop editor. Fully compatible with **Elementor** (free and Pro), the **Gutenberg** block editor, and **ACF** — no add-on required.
 
 == Screenshots ==
 
@@ -23,8 +23,10 @@ Interactive image hotspots with drag & drop editor. Add tooltips, annotations, a
 * **Drag & drop editor** — add, move, and delete hotspots visually in the WordPress back-office.
 * **HTML tooltip layers** — each hotspot opens a fully customisable HTML layer (supports the built-in WP editor).
 * **Media Library integration** — works with any image already uploaded to WordPress.
+* **Elementor compatible** — drop the built-in Elementor Shortcode widget on any page and paste `[wphs_image id="X"]`. Works with Elementor free — no Pro licence required, no add-on needed.
 * **Gutenberg gallery support** — attach hotspots to images inside Gutenberg galleries.
 * **ACF support** — compatible with ACF image, gallery, and repeater fields.
+* **Page builder friendly** — Divi, Beaver Builder, WPBakery and any other builder that renders WordPress shortcodes work out of the box.
 * **Shortcode** — embed any hotspot image anywhere with `[wphs_image id="123"]`.
 * **Gallery slider** — group multiple hotspot images into a responsive carousel with `[wphs_gallery id="X"]`.
 * **Custom hotspot icon** — replace the default dot with any image from the Media Library.
