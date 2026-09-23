@@ -211,6 +211,11 @@ final class Sanitizer {
 	/**
 	 * Strip `<iframe>` tags whose `src` host is not in the allowlist.
 	 *
+	 * Iframes with an allowed host are preserved intact — both the opening
+	 * tag and the closing `</iframe>` — so the resulting HTML remains
+	 * well-formed and the browser's parser does not swallow the rest of
+	 * the document as iframe fallback content.
+	 *
 	 * @param string $html Raw HTML.
 	 * @return string HTML with disallowed iframes removed.
 	 */
@@ -223,21 +228,21 @@ final class Sanitizer {
 			return self::is_allowed_iframe_src( $url ) ? $match[0] : '';
 		};
 
-		// Paired tags: <iframe …>…</iframe>.
+		// Paired tags: <iframe …>…</iframe>. The whole element (including
+		// the closing tag) is either kept intact when the host is allowed
+		// or dropped as a unit when it is not.
 		$html = (string) preg_replace_callback(
 			'#<iframe\b[^>]*>.*?</iframe>#is',
 			$callback,
 			$html
 		);
-		// Self-closing or unclosed iframes (rare but possible after
-		// editor mangling). Match a single tag without inner content.
+		// Any remaining <iframe …> is an unclosed / self-closing tag (rare
+		// but possible after editor mangling). Same host check applies.
 		$html = (string) preg_replace_callback(
 			'#<iframe\b[^>]*?/?>#i',
 			$callback,
 			$html
 		);
-		// Remove any orphan </iframe> that survived the strip.
-		$html = (string) preg_replace( '#</iframe>#i', '', $html );
 
 		return $html;
 	}
