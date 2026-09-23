@@ -216,20 +216,6 @@ final class ShortcodeImage {
 				$tt_tail   = false;
 				$tt_style  = 'background:' . $tt_bg . ';color:' . $tt_color . ';border-radius:' . $tt_radius . 'px;';
 			?><div class="wphs-layer-wrap" id="<?php echo esc_attr( $layer_dom_id ); ?>" data-id="<?php echo esc_attr( $id ); ?>" role="dialog" aria-modal="false" aria-label="<?php echo esc_attr( $layer_label ); ?>" style="position:absolute;top:0;left:0;z-index:3;display:none"><div class="wphs-layer" style="<?php echo esc_attr( $tt_style ); ?>;position:relative"><?php
-				// Allow iframe for oEmbed players (YouTube/Vimeo)
-				$allowed = array_merge( wp_kses_allowed_html( 'post' ), array(
-					'iframe' => array(
-						'src'             => true,
-						'width'           => true,
-						'height'          => true,
-						'frameborder'     => true,
-						'allowfullscreen' => true,
-						'allow'           => true,
-						'title'           => true,
-						'style'           => true,
-						'class'           => true,
-					),
-				) );
 				/**
 				 * Filter the per-hotspot tooltip HTML right before it
 				 * is sanitized with wp_kses().
@@ -237,6 +223,14 @@ final class ShortcodeImage {
 				 * Use this to inject tracking, replace placeholders
 				 * (`{{user.name}}`, `[shortcodes]`, …), or strip
 				 * provider-specific markup.
+				 *
+				 * The filter output is then run through
+				 * {@see Sanitizer::kses_tooltip_html()}, which strips
+				 * iframes whose src host is not on the allowlist and
+				 * applies wp_kses with the tooltip-safe attribute set.
+				 * A third-party filter that reintroduces an iframe
+				 * pointing at an off-allowlist host will therefore
+				 * still have that iframe removed before rendering.
 				 *
 				 * @since 3.0.0
 				 *
@@ -246,7 +240,7 @@ final class ShortcodeImage {
 				 * @param int                 $attachment_id Attachment ID being rendered.
 				 */
 				$html = (string) apply_filters( 'wphs_tooltip_html', $html, $hs, $attachment_id );
-				echo wp_kses( $html, $allowed );
+				echo Sanitizer::kses_tooltip_html( $html );
 			?></div></div>
 			<?php endforeach; ?>
 		</div>

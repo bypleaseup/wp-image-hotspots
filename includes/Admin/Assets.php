@@ -55,7 +55,6 @@ final class Assets {
 
 		wp_enqueue_media();
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'jquery-ui-draggable' );
 
 		if ( 'wphs-editor' === $page ) {
 			wp_enqueue_editor();
@@ -65,7 +64,7 @@ final class Assets {
 		wp_register_script(
 			self::HANDLE_JS,
 			$js_url,
-			array( 'jquery', 'jquery-ui-draggable' ),
+			array( 'jquery' ),
 			$js_ver,
 			true
 		);
