@@ -2,9 +2,9 @@
 Contributors:      bypleaseup
 Tags:              image hotspot, image map, elementor, interactive image, tooltip
 Requires at least: 6.0
-Tested up to:      7.0
+Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        3.1.2
+Stable tag:        3.1.3
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +127,11 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 
 == Changelog ==
 
+= 3.1.3 =
+* Compatibility: declared "Tested up to" WordPress 7.1. Full security + compatibility audit against the WP 7.1.2 core surface — no deprecated APIs used, no runtime warnings, all AJAX endpoints continue to satisfy the nonce -> capability -> sanitize contract.
+* Security hardening: the frontend `[wphs_image]` renderer now sanitizes tooltip HTML through the shared `Sanitizer::kses_tooltip_html()` helper. Third-party integrations that hook into the `wphs_tooltip_html` filter now inherit the same host-allowlist iframe stripping that the server-side save path already applied, closing a defense-in-depth gap.
+* Housekeeping: removed the unused `jquery-ui-draggable` script enqueue on the plugin's admin screens. The drag-and-drop editor uses native pointer events, not jQuery UI, so this dependency was dead code — dropping it insulates the plugin from the jQuery UI 1.14.2 API removals shipped in WordPress 7.1.
+
 = 3.1.2 =
 * Release pipeline hotfix: forces a clean re-deploy. The 3.1.1 tag landed on WordPress.org SVN with the pre-bump code due to a release-event race condition that fired before the version-coherence sanity check. Plugin payload is identical to the intended 3.1.1.
 
@@ -157,6 +162,9 @@ The set of allowed iframe hosts is filterable via the `wphs_allowed_iframe_hosts
 Initial release.
 
 == Upgrade Notice ==
+
+= 3.1.3 =
+Compatibility refresh for WordPress 7.1 + defense-in-depth hardening of the tooltip render path. No data migration, no breaking changes.
 
 = 3.1.2 =
 Re-deploy of 3.1.1 (Tested up to WordPress 7.0) after a pipeline race condition shipped stale code under the 3.1.1 tag. No data migration, no breaking changes.
